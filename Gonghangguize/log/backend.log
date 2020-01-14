@@ -284,3 +284,5 @@ AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse`
 2020-01-14 19:07:28,457 [Thread-3: 12488]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
 2020-01-14 20:05:09,042 [Thread-2: 14452]C:\Users\Administrator\Desktop\fsdo\Gonghangguize\ghrule\views.py:post:41 INFO - hellll
 2020-01-14 20:05:09,299 [Thread-2: 14452]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
+2020-01-14 20:12:10,073 [Thread-2: 16460]C:\Users\Administrator\PycharmProjects\riskcontrol\Gonghangguize\ghrule\views.py:post:41 INFO - hellll
+2020-01-14 20:12:10,308 [Thread-2: 16460]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14

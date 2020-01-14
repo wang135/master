@@ -25,7 +25,7 @@ SECRET_KEY = 'qcb%nds7i63n-=e3%@4+939m89m@_912xaj6f03%fv^ll#j!^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*",]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -180,3 +180,23 @@ LOGGING = {
         }
     }
 }
+
+
+
+
+
+###设置参数
+##测试账号
+hsa_account_code_cs= "hshc_zhangxl",
+hsa_account_key_cs="fff68e025c8743e14bbe398eaaee8ae6",
+
+###正式账号
+
+hsa_account_code_zs= "hshc_ywfk",
+hsa_account_key_zs="d364129b4fdb134c2c78919fe4290978",
+
+
+
+url_cs = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
+
+url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'

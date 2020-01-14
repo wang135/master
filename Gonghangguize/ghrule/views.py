@@ -6,8 +6,9 @@ import pandas as pd
 from django.shortcuts import render,HttpResponse
 from rest_framework.views import APIView
 
-from ghrule.renhang import People
+#from ghrule.renhang import People
 from ghrule.forms import PeopleinfoModelSerializer
+from ghrule.renhang import People
 
 import logging
 logger = logging.getLogger('django')

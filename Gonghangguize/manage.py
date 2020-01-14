@@ -4,7 +4,7 @@ import sys
 import pymysql
 pymysql.install_as_MySQLdb()
 
-import paramiko
+
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Gonghangguize.settings")

@@ -3,40 +3,58 @@ import json
 import requests
 import datetime
 from bs4 import BeautifulSoup
+import socket
+import Gonghangguize.settings as settings
+myname = socket.getfqdn(socket.gethostname(  ))
+myaddr = socket.gethostbyname(myname)
 
+hsa_account_code = ''
+hsa_account_key = ''
+url = ''
+if myaddr =='10.6.105.30':
+    hsa_account_code = settings.hsa_account_code_cs
+    hsa_account_key = settings.hsa_account_key_cs
+    url = settings.url_cs
+else:
+    hsa_account_code = settings.hsa_account_code_zs
+    hsa_account_key = settings.hsa_account_key_zs
+    url = settings.url_zs
 
-def shijian(times):
-    a1 = times.replace('年', '-')
-    a2 = a1.replace('月', '-')
-    a3 = a2.replace('日', '')
-    today = datetime.datetime.today()
-    timness = datetime.datetime.strptime(a3, '%Y-%m-%d')
-    timedte = (today - timness).days
-    return timedte, timness
+#print('wwwwwwwwwwwww',hsa_account_code,hsa_account_key,url)
 
+##随机数据
+import datetime
+today = datetime.datetime.today()
+a = today.strftime("%Y-%m-%d %H:%M:%S")
+b = a.replace('-','')
+c =b.replace(':','')
+d = c.replace(' ','')
 
-url = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
-
+import random
+random.randrange(0, 10000001, 6)
 
 class People:
-    def __init__(self, full_name, id_no, cellphone,id_type):
+    def __init__(self, full_name, id_no,id_type):
         self.full_name = full_name
         self.id_no = id_no
-        self.cellphone = cellphone
         self.id_type = id_type
+    def suiji(self):
+        ids = self.id_no[0:16]
 
+        hsa_business_no = d+ids
+        return hsa_business_no
     def datas(self):
+        hsa_business_no = self.suiji()
         data = {
             "hsa_method": "credit.credit_single_query",
             "hsa_version": "v1.0.0",
             "full_name": self.full_name,
             "id_no": self.id_no,
-            "cellphone": self.cellphone,
             "id_type" : self.id_type,
 
-            "hsa_account_code": "hshc_zhangxl",
-            "hsa_account_key": "fff68e025c8743e14bbe398eaaee8ae6",
-            "hsa_business_no": "1234567"
+            "hsa_account_code": hsa_account_code,
+            "hsa_account_key": hsa_account_key,
+            "hsa_business_no": hsa_business_no
         }
 
         body = requests.post(url, data=data)

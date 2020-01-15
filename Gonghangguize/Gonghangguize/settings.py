@@ -82,18 +82,51 @@ WSGI_APPLICATION = 'Gonghangguize.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'riskcontrol_acard',
-        'USER':'riskcontrol_app',
-        'PASSWORD':'htEu3erj#',
-        'HOST':"test.mysql.proxysql.rw.huashenghaoche.net",
-        'PORT':3306,
-        'init_command': 'SET sql_mode=STRICT_TRANS_TABLES',
+### 判断生产和测试环境
+import socket
 
+myname = socket.getfqdn(socket.gethostname(  ))
+myaddr = socket.gethostbyname(myname)
+if myaddr =='172.16.1.116':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'riskcontrol_acard',
+            'USER': 'riskcontrol_app',
+            'PASSWORD': 'htEu3erj#',
+            'HOST': "test.mysql.proxysql.rw.huashenghaoche.net",
+            'PORT': 3306,
+            'init_command': 'SET default_storage_engine=MyISAM',
+
+        }
     }
-}
+elif myaddr =='10.6.105.30':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'riskcontrol_acard',
+            'USER': 'riskcontrol_app',
+            'PASSWORD': 'htEu3erj#',
+            'HOST': "test.mysql.proxysql.rw.huashenghaoche.net",
+            'PORT': 3306,
+            'init_command': 'SET default_storage_engine=MyISAM',
+
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'riskcontrol_acard',
+            'USER':'riskcontrol_app',
+            'PASSWORD':'htEu3erj#',
+            'HOST':"rm-2zen1r8lhtu0f6cv4.mysql.rds.aliyuncs.com",
+            'PORT':3306,
+            'init_command': 'SET default_storage_engine=MyISAM',
+
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -135,6 +168,13 @@ STATIC_URL = '/static/'
 
 
 
+import datetime
+today = datetime.datetime.today()
+aa = today.strftime("%Y-%m-%d")
+
+filename =aa+'.log'
+#print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
+
 # 日志日志
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 if not os.path.exists(LOG_DIR):
@@ -164,7 +204,7 @@ LOGGING = {
         'file_handler': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'backend.log'),
+            'filename': os.path.join(LOG_DIR, filename),
             'maxBytes': 1024*1024*1024,
             'backupCount': 5,
             'formatter': 'standard',
@@ -183,6 +223,10 @@ LOGGING = {
 
 
 
+##调用方法
+## pboc调用的方法
+hsa_method ="credit.credit_single_query"
+hsa_version= "v1.0.0"
 
 
 ###设置参数
@@ -200,3 +244,15 @@ hsa_account_key_zs="d364129b4fdb134c2c78919fe4290978",
 url_cs = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
 
 url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
+
+
+
+
+##新增邮箱账号
+username='1160329981@qq.com'
+passwd='idjvjcsuwtyefjca'
+recv=['jingwang28@huashenghaoche.com']
+title='错误提示'
+content='工行规则项目报错'
+file= os.path.join(LOG_DIR, filename)
+ssl=True

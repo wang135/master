@@ -7,6 +7,11 @@ import socket
 import Gonghangguize.settings as settings
 myname = socket.getfqdn(socket.gethostname(  ))
 myaddr = socket.gethostbyname(myname)
+BASE_DIR = settings.BASE_DIR
+#print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
+
+import logging
+logger = logging.getLogger('django')
 
 hsa_account_code = ''
 hsa_account_key = ''
@@ -50,8 +55,8 @@ class People:
     def datas(self):
         hsa_business_no = self.suiji()
         data = {
-            "hsa_method": "credit.credit_single_query",
-            "hsa_version": "v1.0.0",
+            "hsa_method": settings.hsa_method,
+            "hsa_version": settings.hsa_version,
             "full_name": self.full_name,
             "id_no": self.id_no,
             "id_type" : self.id_type,
@@ -296,4 +301,6 @@ class People:
             print('code', code)
         else:
             code = 0000
+            logger.info("错误的信息0000", code)
+            #mail.send_mail()
         return code

@@ -19,6 +19,6 @@ from django.conf.urls import url,include
 from ghrule import views
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
+  #  url('admin/', admin.site.urls),
     url(r'^gonghang/$',views.gonghangrule.as_view()),
 ]

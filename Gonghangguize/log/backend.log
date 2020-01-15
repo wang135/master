@@ -288,3 +288,7 @@ AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse`
 2020-01-14 20:12:10,308 [Thread-2: 16460]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
 2020-01-14 20:17:55,816 [Thread-2: 8896]C:\Users\Administrator\PycharmProjects\riskcontrol\Gonghangguize\ghrule\views.py:post:42 INFO - hellll
 2020-01-14 20:17:56,051 [Thread-2: 8896]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
+2020-01-15 09:16:54,226 [Thread-2: 17260]C:\Users\Administrator\PycharmProjects\riskcontrol\Gonghangguize\ghrule\views.py:post:42 INFO - hellll
+2020-01-15 09:16:54,480 [Thread-2: 17260]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
+2020-01-15 09:23:51,441 [Thread-3: 1784]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /pfk/a/
+2020-01-15 09:23:51,442 [Thread-3: 1784]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "GET /pfk/a/ HTTP/1.1" 404 2075

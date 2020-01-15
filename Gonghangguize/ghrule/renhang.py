@@ -15,6 +15,10 @@ if myaddr =='172.16.1.116':
     hsa_account_code = settings.hsa_account_code_cs
     hsa_account_key = settings.hsa_account_key_cs
     url = settings.url_cs
+elif myaddr =='10.6.105.30':
+    hsa_account_code = settings.hsa_account_code_cs
+    hsa_account_key = settings.hsa_account_key_cs
+    url = settings.url_cs
 else:
     hsa_account_code = settings.hsa_account_code_zs
     hsa_account_key = settings.hsa_account_key_zs

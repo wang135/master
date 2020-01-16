@@ -17,7 +17,7 @@ logger = logging.getLogger('django')
 hsa_account_code = ''
 hsa_account_key = ''
 url = ''
-if myaddr =='172.16.1.116':
+if myaddr in ['172.16.1.116', '172.16.1.105']:
     hsa_account_code = settings.hsa_account_code_cs
     hsa_account_key = settings.hsa_account_key_cs
     url = settings.url_cs
@@ -75,7 +75,7 @@ class People:
                 soup = BeautifulSoup(body.text, "lxml")
 
                 dict_all = json.loads(soup.get_text())
-                return dict_all
+
             except:
                 n+=1
             # logger.info("获取人行接口失败")

@@ -77,7 +77,7 @@ class People:
                 dict_all = json.loads(soup.get_text())
             except:
                 n+=1
-            logger.info("获取人行接口失败")
+            # logger.info("获取人行接口失败")
             return dict_all
 
         #print('dict_alldict_all',dict_all)

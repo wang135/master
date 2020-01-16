@@ -87,7 +87,7 @@ import socket
 
 myname = socket.getfqdn(socket.gethostname(  ))
 myaddr = socket.gethostbyname(myname)
-if myaddr in ('172.16.1.116', '172.16.1.105'):
+if myaddr in ['172.16.1.116', '172.16.1.105']:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',

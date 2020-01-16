@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import time
 # Create your views here.
 import json
 import pandas as pd
@@ -10,11 +10,13 @@ from rest_framework.views import APIView
 from ghrule.forms import PeopleinfoModelSerializer
 from ghrule.renhang import People
 
-import Gonghangguize.settings as settings
+import fin_renhang_riskcontrol.settings as settings
 
-# from Emailsend.send import  SendMail
-
-## 自动发邮件邮箱的设置
+from Emailsend.send import  SendMail
+import logging
+logger = logging.getLogger('django')
+# logger = logging.getLogger(__name__)
+# ## 自动发邮件邮箱的设置
 # username=settings.username
 # passwd=settings.passwd
 # recv=settings.recv
@@ -33,12 +35,12 @@ import Gonghangguize.settings as settings
 #         ssl,
 #     )
 
-import logging
-logger = logging.getLogger('django')
+
 class gonghangrule(APIView):
     # 定义请求方法为post，
     def post(self, request):
-
+        a = time.clock()
+        logger.info("开始时间{a}".format(a=a))
         parameter_json = request.body
 
         # json转字典
@@ -64,7 +66,7 @@ class gonghangrule(APIView):
 
                 pub_ser = PeopleinfoModelSerializer(data=request.data)
                 logger.info("hellll")
-                # print('pub_serpub_serpub_serpub_ser',pub_ser)
+                #print('pub_serpub_serpub_serpub_ser',pub_ser)
                 # if pub_ser.is_valid():
                 #     pub_ser.save()
                 if pub_ser.is_valid():
@@ -79,12 +81,22 @@ class gonghangrule(APIView):
 
 
                 ## gonghang
+                b = time.clock()
+                logger.info("开始调用时间{b}". format(b=b))
                 People_renhang = People(names,ids,id_type)
                 code = People_renhang.renhanhgomngshang()
+                c = time.clock()
+                logger.info("调用结束的时间{c}". format(c=c))
+                logger.info("调用总共的时间{diff}".format(diff=c-b))
                 logger.info(code)
                 #mail.send_mail()
                 ret = {"code": code}
                 #mail.send_mail()
+                d= time.clock()
+                logger.info("结束时间时间和获取三方数据时间结束时间{ee}".format(ee=d-c))
+
+                logger.info("结束时间时间{dd}".format(dd = d-a))
+                logger.info("三方时间和总时间的比例{ee}".format(ee=(c-b)/(d-a)))
                 return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
         except:
             ret = {"code":'5000'}

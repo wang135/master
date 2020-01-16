@@ -65,16 +65,16 @@ class gonghangrule(APIView):
                 pub_ser = PeopleinfoModelSerializer(data=request.data)
                 logger.info("hellll")
                 print('pub_serpub_serpub_serpub_ser',pub_ser)
-                # if pub_ser.is_valid():
-                #     pub_ser.save()
                 if pub_ser.is_valid():
-                    n = 0
-                    while n <5:
-                        try:
-                            pub_ser.save()
-                            break
-                        except:
-                            n+=1
+                    pub_ser.save()
+                # if pub_ser.is_valid():
+                #     n = 0
+                #     while n <5:
+                #         try:
+                #             pub_ser.save()
+                #             break
+                #         except:
+                #             n+=1
 
 
 

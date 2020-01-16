@@ -75,6 +75,7 @@ class People:
                 soup = BeautifulSoup(body.text, "lxml")
 
                 dict_all = json.loads(soup.get_text())
+                return dict_all
             except:
                 n+=1
             # logger.info("获取人行接口失败")

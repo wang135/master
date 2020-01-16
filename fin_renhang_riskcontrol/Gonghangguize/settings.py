@@ -248,11 +248,11 @@ url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
 
 
 
-##新增邮箱账号
-username='1160329981@qq.com'
-passwd='idjvjcsuwtyefjca'
-recv=['jingwang28@huashenghaoche.com']
-title='错误提示'
-content='工行规则项目报错'
-file= os.path.join(LOG_DIR, filename)
-ssl=True
+# ##新增邮箱账号
+# username='1160329981@qq.com'
+# passwd='idjvjcsuwtyefjca'
+# recv=['jingwang28@huashenghaoche.com']
+# title='错误提示'
+# content='工行规则项目报错'
+# file= os.path.join(LOG_DIR, filename)
+# ssl=True

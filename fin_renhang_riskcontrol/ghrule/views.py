@@ -12,26 +12,26 @@ from ghrule.renhang import People
 
 import Gonghangguize.settings as settings
 
-from Emailsend.send import  SendMail
+# from Emailsend.send import  SendMail
 
 ## 自动发邮件邮箱的设置
-username=settings.username
-passwd=settings.passwd
-recv=settings.recv
-title=settings.title
-content=settings.content
-file= settings.file
-ssl=settings.ssl
+# username=settings.username
+# passwd=settings.passwd
+# recv=settings.recv
+# title=settings.title
+# content=settings.content
+# file= settings.file
+# ssl=settings.ssl
 
-mail = SendMail(
-        username,
-        passwd,
-        recv,
-        title,
-        content,
-        file,
-        ssl,
-    )
+# mail = SendMail(
+#         username,
+#         passwd,
+#         recv,
+#         title,
+#         content,
+#         file,
+#         ssl,
+#     )
 
 import logging
 logger = logging.getLogger('django')
@@ -89,7 +89,7 @@ class gonghangrule(APIView):
         except:
             ret = {"code":'5000'}
             logger.info("错误的信息",ret)
-            mail.send_mail()
+            # mail.send_mail()
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 class yunwei(APIView):

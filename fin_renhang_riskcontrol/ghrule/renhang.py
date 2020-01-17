@@ -54,6 +54,8 @@ class People:
         hsa_business_no = d+ids
         return hsa_business_no
     def datas(self):
+
+
         hsa_business_no = self.suiji()
         data = {
             "hsa_method": settings.hsa_method,
@@ -79,6 +81,7 @@ class People:
             except:
                 n+=1
             # logger.info("获取人行接口失败")
+
             return dict_all
 
         #print('dict_alldict_all',dict_all)
@@ -108,7 +111,7 @@ class People:
                         month24RepayStatus3 = month24RepayStatus3.replace('G', '0')
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
-                        print(month24RepayStatus4)
+                        #print(month24RepayStatus4)
                         list_djk_max1.append(month24RepayStatus_maax)
 
                         len_djk = len([float(x) for x in month24RepayStatus4 if float(x) > 0])
@@ -280,9 +283,15 @@ class People:
 
     def renhanhgomngshang(self):
 
-
+        ee = time.clock()
+        logger.info("调取人行接口开始时间{ee}".format(ee=ee))
         ii = self.datas()
-        print('rrrr',ii['credit_result_json']['reportMessage'].keys())
+        ff = time.clock()
+        logger.info("调取人行接口结束时间{ff}".format(ff=ff))
+        huoqu = ff - ee
+        logger.info("调取人行接口总共所用时间{huoqu}".format(huoqu=huoqu))
+
+        #print('rrrr',ii['credit_result_json']['reportMessage'].keys())
         code = ii['hsa_status']
         print('codecode',code)
         if code ==1:
@@ -314,4 +323,11 @@ class People:
             code = 0000
             logger.info("错误的信息0000", code)
             #mail.send_mail()
+        gg = time.clock()
+
+        logger.info("调取函数结束时间{gg}".format(gg=gg))
+        all_time =gg-ee
+        logger.info("总共所用时间{all_time}".format(all_time=all_time))
+        diff_hanshu = huoqu/all_time
+        logger.info("调取人行数据和总函数时间的比例{diff_hanshu}".format(diff_hanshu=diff_hanshu))
         return code

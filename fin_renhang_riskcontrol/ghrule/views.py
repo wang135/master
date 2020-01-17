@@ -101,6 +101,8 @@ class gonghangrule(APIView):
         except:
             ret = {"code":'5000'}
             logger.info("错误的信息",ret)
+            over = time.clock()
+            logger.info("错误时候返回来所用时间{over_diff}".format(over_diff=over -a))
             # mail.send_mail()
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
 

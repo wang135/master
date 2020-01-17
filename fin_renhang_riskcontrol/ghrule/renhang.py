@@ -323,6 +323,7 @@ class People:
             else:
                 code = 4000
             print('code', code)
+        ##
         else:
             code = "0000"
         logger.info("错误的信息0000", code)

@@ -17,7 +17,7 @@ logger = logging.getLogger('django')
 hsa_account_code = ''
 hsa_account_key = ''
 url = ''
-if myaddr in ['172.16.1.116', '172.16.1.105']:
+if myaddr in ['172.16.1.116', '172.16.1.105','10.254.0.245']:
     hsa_account_code = settings.hsa_account_code_cs
     hsa_account_key = settings.hsa_account_key_cs
     url = settings.url_cs

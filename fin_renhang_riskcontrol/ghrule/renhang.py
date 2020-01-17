@@ -73,10 +73,12 @@ class People:
         while n <5:
             try:
 
-                body = requests.post(url,timeout = 30, data=data)
+                body = requests.post(url,timeout = 5, data=data)
                 soup = BeautifulSoup(body.text, "lxml")
 
                 dict_all = json.loads(soup.get_text())
+                print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', dict_all)
+
 
             except:
                 n+=1
@@ -286,6 +288,7 @@ class People:
         ee = time.clock()
         logger.info("调取人行接口开始时间{ee}".format(ee=ee))
         ii = self.datas()
+        print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', ii)
         ff = time.clock()
         logger.info("调取人行接口结束时间{ff}".format(ff=ff))
         huoqu = ff - ee
@@ -293,7 +296,8 @@ class People:
 
         #print('rrrr',ii['credit_result_json']['reportMessage'].keys())
         code = ii['hsa_status']
-        print('codecode',code)
+        #
+        #print('codecode',code)
         if code ==1:
             list_djk_max1, list_djk_len1, accountStatus_list = self.creditCardInfo(ii)
 
@@ -320,9 +324,9 @@ class People:
                 code = 4000
             print('code', code)
         else:
-            code = 0000
-            logger.info("错误的信息0000", code)
-            #mail.send_mail()
+            code = "0000"
+        logger.info("错误的信息0000", code)
+        #mail.send_mail()
         gg = time.clock()
 
         logger.info("调取函数结束时间{gg}".format(gg=gg))

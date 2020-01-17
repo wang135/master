@@ -85,6 +85,7 @@ class gonghangrule(APIView):
                 logger.info("开始调用时间{b}". format(b=b))
                 People_renhang = People(names,ids,id_type)
                 code = People_renhang.renhanhgomngshang()
+                print('wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',code)
                 c = time.clock()
                 logger.info("调用结束的时间{c}". format(c=c))
                 logger.info("调用总共的时间{diff}".format(diff=c-b))

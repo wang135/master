@@ -1,4 +1,7 @@
 import numpy as np
+
+from ghrule.forms import RuleSerializer
+from ghrule.models import Rule
 import time
 import json
 import requests
@@ -335,6 +338,16 @@ class People:
             list_condit = [x for x in accountStatus_all if x in status]
             ###计算代偿金额
             cumulativeCompenAmount = max(list_cumulativeCompenAmount)
+            ### 字段写入数据库
+            rule = Rule()
+            rule.full_name = self.full_name
+            rule.id_no = self.id_no
+            rule.all_list_san = max(all_list_san)
+            rule.list_len_all = max(list_len_all)
+
+            rule.cumulativeCompenAmount = cumulativeCompenAmount
+            rule.condit = len(list_condit)
+            rule.save()
             if max(all_list_san) > 3 or max(list_len_all) > 8 or cumulativeCompenAmount > 0 or len(list_condit) > 0:
                 code = 1000
             else:

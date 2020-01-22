@@ -165,14 +165,15 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#
+# from ops import filenameshijian
+# filename = filenameshijian.sjijian()
+# print('filenamefilenamefilename',filename)
+# import datetime
+# today = datetime.datetime.today()
+# aa = today.strftime("%Y-%m-%d")
 
-
-
-import datetime
-today = datetime.datetime.today()
-aa = today.strftime("%Y-%m-%d")
-
-filename =aa+'.log'
+filename ='riw'
 #print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
 
 # 日志日志
@@ -185,7 +186,9 @@ LOGGING = {
     'formatters': {
         'standard': {
             'format': '%(asctime)s [%(threadName)s: %(thread)d]'
-                      '%(pathname)s:%(funcName)s:%(lineno)d %(levelname)s - %(message)s'
+                      '%(pathname)s:%(funcName)s:%(lineno)d %(levelname)s - %(message)s',
+            'datefmt': '%d/%b/%Y %H:%M'
+            # 'datefmt': '%d/%b/%Y %H'
         }
     },
 
@@ -203,20 +206,30 @@ LOGGING = {
         },
         'file_handler': {
             'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
+            # 'class': 'logging.handlers.TimedRotatingFileHandler',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            # 'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': os.path.join(LOG_DIR, filename),
-            'maxBytes': 1024*1024*1024,
-            'backupCount': 5,
+            'when': 'H',
+            'interval':1,
+            # 'maxBytes': 1024*1024*1024,
+            # 'backupCount': 5,
             'formatter': 'standard',
-            'encoding': 'utf-8'
-        }
+            # 'formatter': 'verbose',
+            'encoding': 'utf-8',
+            #'suffix' :  '%Y%m%d-%H%M.log'
+        },
+
+
     },
 
     'loggers': {
         'django': {
             'handlers': ['console_handler', 'file_handler'],
             'filters': ['test'],
-            'level': 'DEBUG'
+            'level': 'DEBUG',
+             'file_handler.suffix':'%Y%m%d-%H%M'
+
         }
     }
 }
@@ -256,3 +269,9 @@ url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
 # content='工行规则项目报错'
 # file= os.path.join(LOG_DIR, filename)
 # ssl=True
+
+
+# import schedule
+# def foo():
+#     print(123)
+# schedule.every(1).seconds.do(foo)

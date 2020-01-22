@@ -7,6 +7,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'csquanxian.settings')
 django.setup()
 
 
+
 def logdemo():
     logger = logging.getLogger('django')
     logger.info('hello logging')

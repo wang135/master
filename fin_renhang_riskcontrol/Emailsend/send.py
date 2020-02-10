@@ -3,8 +3,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import base64
 class SendMail:
-    def __init__(self,username,passwd,recv,title,content,
-                 file=None,ssl=False,
+    def __init__(self,username='1160329981@qq.com',
+        passwd='idjvjcsuwtyefjca',
+        recv=['jingwang28@huashenghaoche.com'],
+        title='错误提示',
+        content='工行规则项目报错',
+        file=r'C:\Users\Administrator\Desktop\接口参数.xlsx',
+        ssl=True,
                  email_host='smtp.qq.com',port=25,ssl_port=465):
         '''
         :param username: 用户名
@@ -34,18 +39,18 @@ class SendMail:
         if self.file:#处理附件的
             #file_name = os.path.split(self.file)[-1]#只取文件名，不取路径
             file_name =self.file
-            try:
-                f = open(self.file, 'rb').read()
-            except Exception as e:
-                raise Exception('附件打不开！！！！')
-            else:
-                att = MIMEText(f,"base64", "utf-8")
-                att["Content-Type"] = 'application/octet-stream'
-                #base64.b64encode(file_name.encode()).decode()
-                new_file_name='=?utf-8?b?' + base64.b64encode(file_name.encode()).decode() + '?='
-                #这里是处理文件名为中文名的，必须这么写
-                att["Content-Disposition"] = 'attachment; filename="%s"'%(new_file_name)
-                msg.attach(att)
+            # try:
+            #     f = open(self.file, 'rb').read()
+            # except Exception as e:
+            #     raise Exception('附件打不开！！！！')
+            # else:
+            #     att = MIMEText(f,"base64", "utf-8")
+            #     att["Content-Type"] = 'application/octet-stream'
+            #     #base64.b64encode(file_name.encode()).decode()
+            #     new_file_name='=?utf-8?b?' + base64.b64encode(file_name.encode()).decode() + '?='
+            #     #这里是处理文件名为中文名的，必须这么写
+            #     att["Content-Disposition"] = 'attachment; filename="%s"'%(new_file_name)
+            #     msg.attach(att)
         msg.attach(MIMEText(self.content))#邮件正文的内容
         msg['Subject'] = self.title  # 邮件主题
         msg['From'] = self.username  # 发送者账号
@@ -60,9 +65,11 @@ class SendMail:
             self.smtp.sendmail(self.username,self.recv,msg.as_string())
             pass
         except Exception as e:
-            print('出错了。。',e)
+            #print('出错了。。',e)
+            pass
         else:
-            print('发送成功！')
+            #print('发送成功！')
+            pass
         self.smtp.quit()
 
 

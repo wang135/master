@@ -223,8 +223,6 @@ hsa_account_key_zs="d364129b4fdb134c2c78919fe4290978",
 
 
 
-url_cs = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
-
 url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
 
 

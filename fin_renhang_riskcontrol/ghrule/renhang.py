@@ -308,7 +308,7 @@ class People:
         ee = time.clock()
         logger.info("调取人行接口开始时间{ee}".format(ee=ee))
         ii = self.datas()
-        print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', ii)
+        #print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', ii)
         ff = time.clock()
         logger.info("调取人行接口结束时间{ff}".format(ff=ff))
         huoqu = ff - ee
@@ -339,15 +339,31 @@ class People:
             ###计算代偿金额
             cumulativeCompenAmount = max(list_cumulativeCompenAmount)
             ### 字段写入数据库
-            rule = Rule()
-            rule.full_name = self.full_name
-            rule.id_no = self.id_no
-            rule.all_list_san = max(all_list_san)
-            rule.list_len_all = max(list_len_all)
+            # rule = Rule()
+            # rule.full_name = self.full_name
+            # rule.id_no = self.id_no
+            # rule.all_list_san = max(all_list_san)
+            # rule.list_len_all = max(list_len_all)
+            #
+            # rule.cumulativeCompenAmount = cumulativeCompenAmount
+            # rule.condit = len(list_condit)
+            # rule.save()
+            n = 0
+            while n < 5:
+                try:
+                    rule = Rule()
+                    rule.full_name = self.full_name
+                    rule.id_no = self.id_no
+                    rule.all_list_san = max(all_list_san)
+                    rule.list_len_all = max(list_len_all)
 
-            rule.cumulativeCompenAmount = cumulativeCompenAmount
-            rule.condit = len(list_condit)
-            rule.save()
+                    rule.cumulativeCompenAmount = cumulativeCompenAmount
+                    rule.condit = len(list_condit)
+                    rule.save()
+                    break
+                except:
+                    n += 1
+
             if max(all_list_san) > 3 or max(list_len_all) > 8 or cumulativeCompenAmount > 0 or len(list_condit) > 0:
                 code = 1000
             else:

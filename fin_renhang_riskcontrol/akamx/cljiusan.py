@@ -1696,16 +1696,16 @@ class Cl_score:
         else:
             dict_stratege_child_br['BR0006'] = 0
             dict_strategy_group_br.update(dict_stratege_child_br)
-        if (allcl['ex_bad1_name'] != "" and allcl['ex_bad1_performance'] != "失信记录已退出") or (
-                allcl['ex_bad2_name'] != "" and allcl['ex_bad2_performance'] != "失信记录已退出") or \
-                (allcl['ex_bad3_name'] != "" and allcl['ex_bad3_performance'] != "失信记录已退出") or (
-                allcl['ex_bad4_name'] != "" and allcl['ex_bad4_performance'] != "失信记录已退出") or \
-                (allcl['ex_bad5_name'] != "" and allcl['ex_bad5_performance'] == "失信记录已退出") or (
-                allcl['ex_bad6_name'] != "" and allcl['ex_bad6_performance'] == "失信记录已退出") or \
-                (allcl['ex_bad7_name'] != "" and allcl['ex_bad7_performance'] == "失信记录已退出") or (
-                allcl['ex_bad8_name'] != "" and allcl['ex_bad8_performance'] == "失信记录已退出") or \
-                (allcl['ex_bad9_name'] != "" and allcl['ex_bad9_performance'] == "失信记录已退出") or (
-                allcl['ex_bad10_name'] != "" and allcl['ex_bad10_performance'] == "失信记录已退出"):
+        if (allcl['ex_bad1_name'] != -111 and allcl['ex_bad1_performance'] != -111) or (
+                allcl['ex_bad2_name'] != -111 and allcl['ex_bad2_performance'] != -111) or \
+                (allcl['ex_bad3_name'] != -111 and allcl['ex_bad3_performance'] != -111) or (
+                allcl['ex_bad4_name'] != -111 and allcl['ex_bad4_performance'] != -111) or \
+                (allcl['ex_bad5_name'] != -111 and allcl['ex_bad5_performance'] == -111) or (
+                allcl['ex_bad6_name'] != -111 and allcl['ex_bad6_performance'] == -111) or \
+                (allcl['ex_bad7_name'] != -111 and allcl['ex_bad7_performance'] == -111) or (
+                allcl['ex_bad8_name'] != -111 and allcl['ex_bad8_performance'] == -111) or \
+                (allcl['ex_bad9_name'] != -111 and allcl['ex_bad9_performance'] == -111) or (
+                allcl['ex_bad_name_performance'] != -111 ):
             dict_stratege_child_br['BR0007'] = 100
             dict_strategy_group_br.update(dict_stratege_child_br)
         else:

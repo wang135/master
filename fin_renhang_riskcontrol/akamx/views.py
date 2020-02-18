@@ -178,7 +178,7 @@ class akmoxing(APIView):
                         and ret['score']['td_score'] < 80 and ret['score']['br_score'] < 80:
                         status = 1000
                     elif ret['score']['score_mx'] < 405 or ret['dict_credit_group'] == 100  \
-                        or ret['score']['td_score'] > 80 and ret['score']['br_score'] > 80:
+                        or (ret['score']['td_score'] > 80 and ret['score']['br_score']) > 80:
                         status = 3000
                     else:
                         status = 2000

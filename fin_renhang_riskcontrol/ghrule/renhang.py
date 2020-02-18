@@ -16,7 +16,7 @@ import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 profile = os.environ.get('TYPEIDEA_PROFILE', )
 name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
-print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
+#print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
@@ -37,8 +37,7 @@ else:
 # from Gonghangguize.settings import product as aa
 #import Gonghangguize.settings as settings
 
-myname = socket.getfqdn(socket.gethostname(  ))
-myaddr = socket.gethostbyname(myname)
+
 #BASE_DIR = settings.BASE_DIR
 #print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
 
@@ -60,8 +59,7 @@ b = a.replace('-','')
 c =b.replace(':','')
 d = c.replace(' ','')
 
-import random
-random.randrange(0, 10000001, 6)
+
 
 class People:
     def __init__(self, full_name, id_no,id_type):
@@ -351,6 +349,7 @@ class People:
             n = 0
             while n < 5:
                 try:
+                    rule = Rule()
                     rule = Rule()
                     rule.full_name = self.full_name
                     rule.id_no = self.id_no

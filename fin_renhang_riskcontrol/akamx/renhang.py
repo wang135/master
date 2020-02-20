@@ -93,7 +93,7 @@ class Bairong:
             else:
                 longestOverdueMonth = ''
 
-        print('longestOverdueMonth', longestOverdueMonth)
+        #print('longestOverdueMonth', longestOverdueMonth)
 
         ####
         ##近12个月贷款当前逾期总金额

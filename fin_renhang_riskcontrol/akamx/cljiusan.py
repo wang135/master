@@ -1,5 +1,3 @@
-
-
 class Cl_score:
     # def __init__(self):
     def cl_score(self,allcl):
@@ -1711,8 +1709,7 @@ class Cl_score:
         else:
             dict_stratege_child_br['BR0007'] = 0
             dict_strategy_group_br.update(dict_stratege_child_br)
-        print('sum', sum([allcl['als_m6_nsloan_count'], allcl['als_m6_cons_count'], allcl['als_m6_autofin_count'],
-                          allcl['als_m6_sloan_count'], allcl['als_m6_finlea_count'], allcl['als_m6_else_count']]))
+
         if sum([allcl['als_m6_nsloan_count'], allcl['als_m6_cons_count'], allcl['als_m6_autofin_count'],
                 allcl['als_m6_sloan_count'], allcl['als_m6_finlea_count'], allcl['als_m6_else_count']]) >= 5.0 or \
                 sum([allcl['als_m12_nsloan_count'], allcl['als_m12_cons_count'], allcl['als_m12_autofin_count'],

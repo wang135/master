@@ -14,8 +14,53 @@ def shijian(times):
     timedte = (today - timness).days
     return timedte, timness
 
+from Gonghangguize.settings import develop as dd
 
-url = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
+from Gonghangguize.settings import product as pp
+#import Gonghangguize.settings as settings
+import os
+#name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
+profile = os.environ.get('TYPEIDEA_PROFILE', )
+name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
+##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
+if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
+    hsa_account_code = dd.hsa_account_code_cs
+    hsa_account_key = dd.hsa_account_key_cs
+    hsa_method = dd.hsa_method
+    hsa_version = dd.hsa_version
+    url = dd.url_cs
+else:
+    hsa_account_code = pp.hsa_account_code_zs
+    hsa_account_key = pp.hsa_account_key_zs
+    hsa_method = pp.hsa_method
+    hsa_version = pp.hsa_version
+    url = pp.url_zs
+
+
+
+##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
+if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
+    hsa_account_code = dd.hsa_account_code_cs
+    hsa_account_key = dd.hsa_account_key_cs
+    hsa_method = dd.hsa_method
+    hsa_version = dd.hsa_version
+    url = dd.url_cs
+else:
+    hsa_account_code = pp.hsa_account_code_zs
+    hsa_account_key = pp.hsa_account_key_zs
+    hsa_method = pp.hsa_method
+    hsa_version = pp.hsa_version
+    url = pp.url_zs
+
+
+
+##随机数据
+import datetime
+today = datetime.datetime.today()
+a = today.strftime("%Y-%m-%d %H:%M:%S")
+b = a.replace('-','')
+c =b.replace(':','')
+d = c.replace(' ','')
 
 
 class People:
@@ -25,7 +70,13 @@ class People:
         self.cellphone = cellphone
         self.id_type = id_type
 
+    def suiji(self):
+        ids = self.id_no[0:16]
+
+        hsa_business_no = d + ids
+        return hsa_business_no
     def datas(self):
+        hsa_business_no = self.suiji()
         data = {
             "hsa_method": "credit.credit_single_query",
             "hsa_version": "v1.0.0",
@@ -34,19 +85,19 @@ class People:
             "cellphone": self.cellphone,
             "id_type" : self.id_type,
 
-            "hsa_account_code": "hshc_zhangxl",
-            "hsa_account_key": "fff68e025c8743e14bbe398eaaee8ae6",
-            "hsa_business_no": "1234567"
+            "hsa_account_code": hsa_account_code,
+            "hsa_account_key":hsa_account_key,
+            "hsa_business_no": hsa_business_no
         }
 
         body = requests.post(url, data=data)
-        print('datadatadatatdatda',data)
+        #print('datadatadatatdatda',data)
         soup = BeautifulSoup(body.text, "lxml")
 
         dict_all = json.loads(soup.get_text())
 
         return dict_all
-
+  
     def loaninfo(self, ii):
 
         # ''' 贷款的字段  '''
@@ -67,7 +118,7 @@ class People:
             else:
                 longestOverdueMonth = 0
 
-        print('longestOverdueMonth', longestOverdueMonth)
+        #print('longestOverdueMonth', longestOverdueMonth)
 
         ####
         ##近12个月贷款当前逾期总金额
@@ -122,7 +173,7 @@ class People:
                         if timedte < 12 * 30:
                             currentOverdueAmount = currentOverdueAmount.replace(',', '')
                             list_yuqu_12.append(float(currentOverdueAmount))
-                            print('1111111111', accountStatus, timedte, timness, currentOverdueAmount)
+                            #print('1111111111', accountStatus, timedte, timness, currentOverdueAmount)
                         ## 6个月的
                         if timedte < 6 * 30:
                             list_currentOverdueAmount_6.append(float(currentOverdueAmount))
@@ -130,13 +181,14 @@ class People:
                             list_num_3.append(beginDate)
                         if timedte < 31:
                             len_bishu.append(beginDate)
-                # print('list_yuqu',list_yuqu)
-                # print('list_yue',list_yue)
-                # print('zzzzzzzzzzzzzzzzzzzzzzzzzzz',sum(principalAmount_list)/sum(amount_list)*100)
+                # #print('list_yuqu',list_yuqu)
+                # #print('list_yue',list_yue)
+                # #print('zzzzzzzzzzzzzzzzzzzzzzzzzzz',sum(principalAmount_list)/sum(amount_list)*100)
                 ###每笔贷款的最长逾期期数
 
             else:
-                print('ccc')
+                #print('ccc')
+                pass
         except:
 
             if 'loanInfo' in json.loads(json.loads(ii)['statusMsg'])['reportMessage'].keys():
@@ -145,7 +197,7 @@ class People:
                 for lt in loanInfo:
                     if 'currentOverdueAmount' in lt.keys():
                         accountStatus = lt['accountStatus']
-                        print('accountStatusaccountStatusaccountStatus', accountStatus)
+                        #print('accountStatusaccountStatusaccountStatus', accountStatus)
                         currentOverdueAmount = lt['currentOverdueAmount'].replace(',', '')
                         currentOverdueNum = lt['currentOverdueNum']
                         list_yue.append(float(currentOverdueNum))
@@ -176,7 +228,7 @@ class People:
                         if timedte < 12 * 30:
                             currentOverdueAmount = currentOverdueAmount
                             list_yuqu_12.append(float(currentOverdueAmount))
-                            print('22222222222222', accountStatus, timedte, timness, currentOverdueAmount)
+                            #print('22222222222222', accountStatus, timedte, timness, currentOverdueAmount)
                         ## 6个月的
                         if timedte < 6 * 30:
                             list_currentOverdueAmount_6.append(float(currentOverdueAmount))
@@ -185,8 +237,9 @@ class People:
                         if timedte < 31:
                             len_bishu.append(beginDate)
             else:
-                print("bucunzai")
-        print('wwwwwwwwww', list_yuqu_12, list_yue, principalAmount_list, amount_list, len_bishu, list_loan_yuqi)
+                #print("bucunzai")
+                pass
+        #print('wwwwwwwwww', list_yuqu_12, list_yue, principalAmount_list, amount_list, len_bishu, list_loan_yuqi)
         return longestOverdueMonth, list_yuqu_12, list_yue, principalAmount_list, amount_list, len_bishu, list_loan_yuqi, list_num_3, list_currentOverdueAmount_6
 
         # """ 贷记卡"""
@@ -244,7 +297,7 @@ class People:
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
 
                         djk_yuqi.append(month24RepayStatus_maax)
-                        # print('month24RepayStatus', month24RepayStatus_maax)
+                        # #print('month24RepayStatus', month24RepayStatus_maax)
 
                         beginDate = cd['titleInfoObject']['beginDate']
                         timedte, timness = shijian(beginDate)
@@ -257,7 +310,8 @@ class People:
                             djk_six_usedMmount.append(usedMmount_djk)
                             rate_12_djk.append(rate_amout)
             else:
-                print("bucun11")
+                #print("bucun11")
+                pass
         except:
 
             if 'creditCardInfo' in json.loads(json.loads(ii)['statusMsg'])['reportMessage'].keys():
@@ -290,7 +344,7 @@ class People:
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
                         djk_yuqi.append(month24RepayStatus_maax)
-                        # print('month24RepayStatus', month24RepayStatus_maax)
+                        # #print('month24RepayStatus', month24RepayStatus_maax)
                         beginDate = cd['titleInfoObject']['beginDate']
 
                         timedte, timness = shijian(beginDate)
@@ -302,9 +356,7 @@ class People:
                             djk_six_amount.append(amount_djk)
                             djk_six_usedMmount.append(usedMmount_djk)
                             rate_12_djk.append(rate_amout)
-        print('qqqqk', list_usedMmount_djk, list_usedMmount_amount_djk, list_djk_yuqi, rate_djk, djk_yuqi,
-              djk_six_amount,
-              djk_six_usedMmount, rate_six_djk)
+        #print('qqqqk', list_usedMmount_djk, list_usedMmount_amount_djk, list_djk_yuqi, rate_djk, djk_yuqi,djk_six_amount,djk_six_usedMmount, rate_six_djk)
         return list_usedMmount_djk, list_usedMmount_amount_djk, list_djk_yuqi, rate_djk, djk_yuqi, djk_six_amount, djk_six_usedMmount, rate_six_djk, rate_12_djk
 
     def queryRecordSum(self, ii):
@@ -325,7 +377,7 @@ class People:
                         'last1MonthsCreditCardApprovalSum']
                 last1MonthsLoanApprovalSum = json.loads(json.loads(ii)['statusMsg'])['reportMessage']['queryRecordSum'][
                     'last1MonthsLoanApprovalSum']
-        print(last1MonthsCreditCardApprovalSum, last1MonthsLoanApprovalSum)
+        #print(last1MonthsCreditCardApprovalSum, last1MonthsLoanApprovalSum)
         return float(last1MonthsCreditCardApprovalSum), float(last1MonthsLoanApprovalSum)
 
     def renhanghongxian(self):
@@ -333,7 +385,7 @@ class People:
         code = ii['hsa_status']
 
         if code ==1:
-            print('iiiiiiiiiiiiii',ii)
+            #print('iiiiiiiiiiiiii',ii)
             longestOverdueMonth, list_yuqu_12, list_yue, principalAmount_list, amount_list, len_bishu, list_loan_yuqi, list_num_3, list_currentOverdueAmount_6 = self.loaninfo(
                 ii)
             list_usedMmount_djk, list_usedMmount_amount_djk, list_djk_yuqi, rate_djk, djk_yuqi, djk_six_amount, djk_six_usedMmount, rate_six_djk, rate_12_djk \
@@ -513,7 +565,7 @@ class People:
             else:
                 dict_credit_child['PBOC020'] = 0
                 dict_credit_group.update(dict_credit_child)
-            print(dict_credit_group)
+            #print(dict_credit_group)
             dict_credit_group['code'] = 1
             return dict_credit_group
         else:
@@ -521,13 +573,6 @@ class People:
             dict_credit_group['code'] = 0
             return dict_credit_group
 
-        #
-# if __name__ == "__main__":
-#     # full_name,id_no,cellphone
-#     # People
-#     Peoples = People("马良鹏", "62232619921018613X", "18293551352")
-#     dict_credit_group, dict_credit_child = Peoples.renhanghongxian()
-#     print(dict_credit_group)
 
 
 

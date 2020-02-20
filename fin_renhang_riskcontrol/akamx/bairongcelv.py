@@ -1,4 +1,3 @@
-
 def is_Chinese(word):
     for ch in word:
         if '\u4e00' <= ch <= '\u9fff':
@@ -351,4 +350,3 @@ class sanfang:
 
         dict_strategy_group, dict_strategy_group_br =cl_score.cl_score(dict_br)
         return dict_strategy_group, dict_strategy_group_br
-        # return dict_br

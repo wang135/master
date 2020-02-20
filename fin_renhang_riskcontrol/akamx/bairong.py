@@ -6,8 +6,9 @@ import datetime
 
 from akamx.lujing import lujings
 
+from akamx.xgboost import xgboost
 
-
+import pandas as pd
 import logging
 logger = logging.getLogger('django')
 
@@ -20,7 +21,7 @@ import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 profile = os.environ.get('TYPEIDEA_PROFILE', )
 name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
-#print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
+##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
@@ -36,7 +37,7 @@ else:
 
 
 
-#print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
+##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
@@ -58,8 +59,11 @@ b = a.replace('-','')
 c =b.replace(':','')
 d = c.replace(' ','')
 
-lujins = lujings()
-www = lujins.shenfen()
+# lujins = lujings()
+# www = lujins.shenfen()
+# cell_province = lujins.cell_province()
+# cell_city = lujins.cell_city()[['cell_city','ids']]
+
 class Bairong:
     def __init__(self,full_name,id_no,cellphone):
         self.full_name =full_name
@@ -71,38 +75,40 @@ class Bairong:
         hsa_business_no = d+ids
         return hsa_business_no
     def requestss(self):
+        try:
+            hsa_business_no = self.suiji()
+            results_dicts = {}
+            list_all = ['credit100.credit100_person_apply_loan', 'credit100.credit100_person_special_list',
+                        'credit100.credit100_person_execution',
+                        'credit100.credit100_person_fraud_relation'
+                , 'credit100.credit100_person_info_relation']
+            for datas in list_all:
+                data = {
+                    "hsa_method": datas,
+                    "hsa_version": hsa_version,
+                    "full_name": self.full_name,
+                    "id_no": self.id_no,
+                    "cellphone": self.cellphone,
+                     "hsa_account_code": hsa_account_code,
+                     "hsa_account_key": hsa_account_key,
+                    "hsa_business_no": hsa_business_no
+                }
 
-        hsa_business_no = self.suiji()
-        results_dicts = {}
-        list_all = ['credit100.credit100_person_apply_loan', 'credit100.credit100_person_special_list',
-                    'credit100.credit100_person_execution',
-                    'credit100.credit100_person_fraud_relation'
-            , 'credit100.credit100_person_info_relation']
-        for datas in list_all:
-            data = {
-                "hsa_method": datas,
-                "hsa_version": hsa_version,
-                "full_name": self.full_name,
-                "id_no": self.id_no,
-                "cellphone": self.cellphone,
-                 "hsa_account_code": hsa_account_code,
-                 "hsa_account_key": hsa_account_key,
-                "hsa_business_no": hsa_business_no
-            }
+                body = requests.post(url, data=data)
 
-            body = requests.post(url, data=data)
+                soup = BeautifulSoup(body.text, "lxml")
+                ##print('soupsoupsoupsoup',soup)
+                dict_all = json.loads(soup.get_text())
 
-            soup = BeautifulSoup(body.text, "lxml")
-            #print('soupsoupsoupsoup',soup)
-            dict_all = json.loads(soup.get_text())
-
-            if 'result_list' in dict_all.keys():
-                results_a = json.loads(dict_all['result_list'])
-                # results_b[datas] = results_a
-                # print(results_b)
-                results_dicts.update(results_a)
-        return results_dicts
-
+                if 'result_list' in dict_all.keys():
+                    results_a = json.loads(dict_all['result_list'])
+                    # results_b[datas] = results_a
+                    # #print(results_b)
+                    results_dicts.update(results_a)
+            return results_dicts
+        except:
+            codess = 4000
+            return codess
     def sex_gender(self):
         dict_sex = {}
         now = datetime.datetime.today()
@@ -118,44 +124,67 @@ class Bairong:
         else:
             dict_sex['gender'] = 1
         return dict_sex
-    def bar_moing(self,www):
-        results_dicts = self.requestss()
-        try:
-            #print('results_dictsresults_dictsresults_dictsresults_dicts',results_dicts)
-            dict_sex = self.sex_gender()
-            ### 获取百融数据的result_list
+    def bar_moing(self,results_dicts):
+        www = lujings().shenfen()
+        # print('wwwwwwwwwwwwwwwwwwwwwwwwwww',www)
+        # print(results_dicts)
+        # www['号段'] = www['号段'].astype('str')
 
-            ###取百融模型
-            bl_json = {}
-            list_binaliang = ['als_m12_id_nbank_orgnum', 'frg_list_level', 'ir_m6_cell_x_linkman_cell_cnt',
-                              'flag_specialList_c']
-            if results_dicts['flag_applyloanstr'] == '1':
-                for ii in list_binaliang:
-                    # try:
-                    if ii in results_dicts.keys():
-                        bl_json[ii] = results_dicts[ii]
-                    else:
-                        bl_json[ii] = -1
-            else:
-                bl_json = {'als_m12_id_nbank_orgnum': -99, 'frg_list_level': -99,
-                           'ir_m6_cell_x_linkman_cell_cnt': -99, 'flag_specialList_c': -99}
-            # print(bl_json)
+        cell_province = lujings().cell_province()
+        cell_province['cell_province'] = cell_province['cell_province'].str.strip()
 
-            # model_path = r"C:\Users\Administrator\shenfen.pickle"
+        cell_city = lujings().cell_city()[['cell_city','ids']]
+        cell_city['cell_city'] = cell_city['cell_city'].str.strip()
+        #results_dicts = self.requestss()
+        if results_dicts != 4000:
+            try:
+                ###print('results_dictsresults_dictsresults_dictsresults_dicts',results_dicts)
+                dict_sex = self.sex_gender()
+                ### 获取百融数据的result_list
 
-            www['号段'] = www['号段'].apply(lambda x: str(x))
-            #print('www',www)
-            phon_a = self.cellphone[0:7]
-            ss = www[www['号段'] == phon_a]
-            #print('ss', ss)
-            ss_dict = ss.to_dict(orient='records')[0]
-            bl_json.update(ss_dict)
-            bl_json.update(dict_sex)
+                ###取百融模型
+                bl_json = {}
+                list_binaliang = ['als_m12_id_nbank_orgnum', 'frg_list_level', 'ir_m6_cell_x_linkman_cell_cnt',
+                                  'flag_specialList_c']
+                if results_dicts['flag_applyloanstr'] == '1':
+                    for ii in list_binaliang:
+                        if ii in results_dicts.keys():
+                            bl_json[ii] = results_dicts[ii]
+                        else:
+                            bl_json[ii] = -1
+                else:
+                    bl_json = {'als_m12_id_nbank_orgnum': -99, 'frg_list_level': -99,
+                               'ir_m6_cell_x_linkman_cell_cnt': -99, 'flag_specialList_c': -99}
+                # ##print(bl_json)
+
+                # model_path = r"C:\Users\Administrator\shenfen.pickle"
+
+                www['号段'] = www['号段'].apply(lambda x: str(x))
+                ###print('www',www)
+                phon_a = self.cellphone[0:7]
+                ss = www[www['号段'] == phon_a]
+
+                ### LR的模型
+                ss_dict = ss.to_dict(orient='records')[0]
+                bl_json.update(ss_dict)
+                bl_json.update(dict_sex)
+                ##print('ccccccccccccccccccccccccc')
+                ##print(cell_province)
+                ##print('cell_city',cell_city)
+                xgb = xgboost(results_dicts,ss,dict_sex)
+                datas = xgb.join()
+                id_city = xgb.id_shenfen(self.id_no)
+                datas['id_city'] = id_city
+                ##print('dadadadaaaa',datas['id_city'])
+                xgb_score = xgb.datas(datas)
+
+                return bl_json,xgb_score
+            except:
+                bl_json={'bairong':4000}
+                return bl_json
+        else:
+            bl_json = {'bairong': 4000}
             return bl_json
-        except:
-            bl_json={'bairong':4000}
-            return bl_json
-
     ### 计算
     def tongdun_requests(self):
         try:
@@ -179,17 +208,23 @@ class Bairong:
 
             hsa_origin_message1 = dict_all["hsa_origin_message"]
             hsa_origin_message = json.loads(hsa_origin_message1)
+            return hsa_origin_message
+        except:
+            codess = 4000
+            return 4000
+    def tongdun_jisuan(self,hsa_origin_message):
+        if hsa_origin_message !=4000:
             indicatrix = hsa_origin_message['result_desc']['PERSONASPRELOAN']['indicatrix']
             dict_moxing = {}
             if hsa_origin_message['success'] is True:
                 list_moxing = ["i_max_cnt_partner_daily_Loan_finance_365day", "i_get_node_rank_value_Loan_all_all"]
 
                 for ii in indicatrix:
-                    # print("iiii",ii)
+                    # ##print("iiii",ii)
                     if list_moxing[0] in ii.keys():
                         i_max_cnt_partner_daily_Loan_finance_365day = ii[list_moxing[0]]
 
-                        print('ccc', i_max_cnt_partner_daily_Loan_finance_365day)
+                        ##print('ccc', i_max_cnt_partner_daily_Loan_finance_365day)
 
                         if i_max_cnt_partner_daily_Loan_finance_365day is None:
                             dict_moxing['i_max_cnt_partner_daily_Loan_finance_365day'] = -1111
@@ -199,25 +234,33 @@ class Bairong:
                                 'i_max_cnt_partner_daily_Loan_finance_365day'] = i_max_cnt_partner_daily_Loan_finance_365day
                     elif list_moxing[1] in ii.keys():
                         i_get_node_rank_value_Loan_all_all = ii[list_moxing[1]]
-                        print('ddd', i_get_node_rank_value_Loan_all_all)
+                        ##print('ddd', i_get_node_rank_value_Loan_all_all)
                         if i_get_node_rank_value_Loan_all_all is None:
                             dict_moxing['i_get_node_rank_value_Loan_all_all'] = -1111
                         else:
                             dict_moxing['i_get_node_rank_value_Loan_all_all'] = i_get_node_rank_value_Loan_all_all
-                            # print('ddd',dd)i_get_node_rank_value_Loan_all_all
+                            # ##print('ddd',dd)i_get_node_rank_value_Loan_all_all
 
             else:
                 dict_moxing = {'i_max_cnt_partner_daily_Loan_finance_365day': -999,
                                'i_get_node_rank_value_Loan_all_all': -999}
             return dict_moxing
-        except:
+        else:
             #### 同盾的数据获取失败
             codes = 5000
             dict_moxing = {'tongdun':codes}
             return dict_moxing
     def moxing_tz(self):
-        bl_json = self.bar_moing(www=www)
-        td_json = self.tongdun_requests()
-        bl_json.update(td_json)
+        results_br = self.requestss()
+        ##print('kaishikaishisssssssssssssssssssssssssss')
+        bl_json,xgb_score = self.bar_moing(results_br)
+        #print('bbbbbbbbbbbbbbbbbbbbbbb',xgb_score[0])
 
-        return bl_json
+        results_td = self.tongdun_requests()
+        td_jisuan = self.tongdun_jisuan(results_td)
+        bl_json.update(td_jisuan)
+
+
+        return bl_json,xgb_score[0]
+
+

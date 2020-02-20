@@ -46,7 +46,7 @@ www = lujins.shenfen()
 import logging
 logger = logging.getLogger('django')
 class akmoxing(APIView):
-    #print("kaishi")
+    ##print("kaishi")
     # 定义请求方法为post，
     def post(self, request):
         a = time.clock()
@@ -55,7 +55,7 @@ class akmoxing(APIView):
 
         # json转字典
         parameter = json.loads(parameter_json)
-        print(parameter)
+        ##print(parameter)
         # 定义请求里的key
         full_name = 'full_name'
         id_no = 'id_no'
@@ -66,7 +66,7 @@ class akmoxing(APIView):
         # 如果定义的get_phone和get_password都在请求的json中忘下走
         try:
             if full_name in parameter and id_no in parameter and cellphone in parameter and id_type in parameter:
-                #print('sss',parameter)
+                ##print('sss',parameter)
                 # 取出其request.json中的phone和password
                 names = parameter[full_name]
                 ids = parameter[id_no]
@@ -81,9 +81,9 @@ class akmoxing(APIView):
                 c = time.clock()
                 logger.info("获取客户的时间{c}".format(c=c))
                 # logger.info(pub_ser)
-                # print('pub_ser',pub_ser)
+                # #print('pub_ser',pub_ser)
                 if pub_ser.is_valid():
-                    #print(pub_ser.validated_data)
+                    ##print(pub_ser.validated_data)
                     pub_ser.save()
                     #return Response(pub_ser.data)
                 d = time.clock()
@@ -98,7 +98,8 @@ class akmoxing(APIView):
                 ### 逻辑回归的模型特征
                 bairong = Bairong(names,ids,phone)
 
-                bl_json = bairong.moxing_tz()
+                bl_json,xgb_score = bairong.moxing_tz()
+                #print('xgb_scorexgb_scorexgb_scorexgb_score',xgb_score)
                 f = time.clock()
                 logger.info("获取三方数据{f}".format(f=f))
                 if 'tongdun' in bl_json.keys() or 'bairong' in bl_json.keys():
@@ -114,16 +115,16 @@ class akmoxing(APIView):
                     ret['df1_dict'] = -99
                     ret['score'] = -99
                     jsonss_ser = jsonssModelSerializer(data=ret)
-                    #print(jsonss_ser.is_valid())
+                    ##print(jsonss_ser.is_valid())
 
                     if jsonss_ser.is_valid(raise_exception=False):
                         jsonss_ser.save()
-                        # print('ccccc')
+                        # #print('ccccc')
                     else:
-                        # print(form_obj.clean_data)
-                        #print('aaaaaaaaaaaaaaaaaaaaaa',jsonss_ser.errors)
+                        # #print(form_obj.clean_data)
+                        ##print('aaaaaaaaaaaaaaaaaaaaaa',jsonss_ser.errors)
                         return jsonss_ser.errors
-                    ret = {"code": '6000'}
+                    ret = {"code": 6000}
                     names = parameter[full_name]
                     ids = parameter[id_no]
                     cntent = names + str(ids) + '6000'
@@ -146,7 +147,7 @@ class akmoxing(APIView):
                     ### 模型的数据
                     df = pd.DataFrame([bl_json])
                     df['融资金额'] = money
-                    # print(df.dtypes)
+                    # #print(df.dtypes)
                     df['als_m12_id_nbank_orgnum'] = df['als_m12_id_nbank_orgnum'].apply(lambda x:float(x))
                     df['frg_list_level'] = df['frg_list_level'].apply(lambda x: float(x))
                     df['ir_m6_cell_x_linkman_cell_cnt'] = df['ir_m6_cell_x_linkman_cell_cnt'].apply(lambda x: float(x))
@@ -155,24 +156,26 @@ class akmoxing(APIView):
                     ret['df1_dict'] = df1_dict
                     ret['score'] = {'td_score':max(ret['cl_td'].values()),
                                     'br_score':max(ret['cl_br'].values()),
-                                    'score_mx':df1_dict[0]['score']
+                                    'score_mx':df1_dict[0]['score'],
+                                   'xgb_score':float(xgb_score)
+
                     }
                     g = time.clock()
                     logger.info("输出最终数据{g}".format(g=g))
                     # ret_json = json.dumps(ret)
-                    # print('ret_jsonret_jsonret_json',ret.keys())
+                    # #print('ret_jsonret_jsonret_json',ret.keys())
                     # #data = JSONParser().parse(ret)
                     jsonss_ser = jsonssModelSerializer(data=ret)
-                    print(jsonss_ser.is_valid())
+                    #print(jsonss_ser.is_valid())
 
                     if jsonss_ser.is_valid(raise_exception=False) :
                         jsonss_ser.save()
                         h = time.clock()
                         logger.info("保存数据{h}".format(h=h))
-                        #print('ccccc')
+                        ##print('ccccc')
                     else:
-                    # print(form_obj.clean_data)
-                        #print(jsonss_ser.errors)
+                    # #print(form_obj.clean_data)
+                        #print('errorserrorserrorserrorserrorserrors',jsonss_ser.errors)
                         return jsonss_ser.errors
                     if ret['score']['score_mx'] > 715 and ret['dict_credit_group'] <100  \
                         and ret['score']['td_score'] < 80 and ret['score']['br_score'] < 80:
@@ -189,7 +192,7 @@ class akmoxing(APIView):
                     logger.info("总共用时间是{delates}".format(delates=delates))
                     return HttpResponse(json.dumps(statuss , ensure_ascii=False), content_type="application/json,charset=utf-8")
             else:
-                ret = {"code": '4000'}
+                ret = {"code": 4000}
                 names = parameter[full_name]
                 ids = parameter[id_no]
                 cntent = names + str(ids)+'4000'
@@ -202,7 +205,7 @@ class akmoxing(APIView):
             cntent = names + str(ids) + '5000'
             mail = SendMail(content=cntent)
             mail.send_mail()
-            ret = {"code": '5000'}
+            ret = {"code": 5000}
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 

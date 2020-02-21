@@ -18,15 +18,15 @@ logger = logging.getLogger('django')
 
 # mail =SendMail()
 
-class gonghangrule(APIView):
+class gonghangrule:
     # 定义请求方法为post，
-    def post(self, request):
+    def get(self, parameter):
         a = time.clock()
-        logger.info("开始时间{a}".format(a=a))
-        parameter_json = request.body
-
-        # json转字典
-        parameter = json.loads(parameter_json)
+        # logger.info("开始时间{a}".format(a=a))
+        # parameter_json = request.body
+        #
+        # # json转字典
+        # parameter = json.loads(parameter_json)
         #print(parameter)
         logger.info(parameter)
         # 定义请求里的key
@@ -35,8 +35,8 @@ class gonghangrule(APIView):
         #cellphone = 'cellphone'
         id_type = 'id_type'
         ret = {"code":'1000'}
-        data1 = request.data
-        print('qqqqqqqqqqqq',data1)
+        # data1 = request.data
+        # print('qqqqqqqqqqqq',data1)
         # 如果定义的get_phone和get_password都在请求的json中忘下走
         try:
             if full_name in parameter and id_no in parameter and  id_type in parameter:
@@ -47,10 +47,6 @@ class gonghangrule(APIView):
 
                 id_type = parameter[id_type]
                 id_type = id_type
-
-
-
-
                 ## gonghang
                 b = time.clock()
                 logger.info("开始调用时间{b}". format(b=b))
@@ -65,12 +61,12 @@ class gonghangrule(APIView):
                 ret = {"code": code}
                 #mail.send_mail()
 
-                data1['code'] = code
+                parameter['code'] = code
                 # cntent = names+str(ids)
                 # mail = SendMail(content = cntent)
                 # mail.send_mail()
                 #print('data1',data1)
-                pub_ser = PeopleinfoModelSerializer(data=data1)
+                pub_ser = PeopleinfoModelSerializer(data=parameter)
                 logger.info("hellll")
                 # print('pub_serpub_serpub_serpub_ser',pub_ser)
                 # if pub_ser.is_valid():
@@ -86,7 +82,8 @@ class gonghangrule(APIView):
 
                             n += 1
                 else:
-                    print('eeeeeeeeeeeeeeeee', pub_ser.errors)
+                    pass
+                    # print('eeeeeeeeeeeeeeeee', pub_ser.errors)
 
                 d= time.clock()
                 logger.info("结束时间时间和获取三方数据时间结束时间{ee}".format(ee=d-c))
@@ -99,9 +96,9 @@ class gonghangrule(APIView):
             logger.info("错误的信息",ret)
             over = time.clock()
             logger.info("错误时候返回来所用时间{over_diff}".format(over_diff=over -a))
-            data1['code'] = code
-            names = data1['full_name']
-            ids = data1['id_no']
+            parameter['code'] = code
+            names = parameter['full_name']
+            ids = parameter['id_no']
             cntent = names + str(ids)
             mail = SendMail(content=cntent)
             mail.send_mail()

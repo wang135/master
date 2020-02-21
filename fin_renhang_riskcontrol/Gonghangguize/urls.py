@@ -21,9 +21,10 @@ from akamx import views as view
 
 urlpatterns = [
   #  url('admin/', admin.site.urls),
-    url(r'^gonghang/$',views.gonghangrule.as_view()),
-    url(r'^yunwei/$',views.yunwei.as_view()),
-     url(r'^api/$',view.akmoxing.as_view()),
-     url(r'^yun/$',view.yunwei.as_view()),
+  #   url(r'^gonghang/$',views.gonghangrule.as_view()),
+  #   url(r'^yunwei/$',views.yunwei.as_view()),
+  #    url(r'^api/$',view.akmoxing.as_view()),
+  #    url(r'^yun/$',view.yunwei.as_view()),
+    url(r'all/',view.urlss.as_view()),
 
 ]

@@ -40,7 +40,7 @@ class Bairong:
     def bar_moing(self,results_dicts):
         www = lujings().shenfen()
         # print('wwwwwwwwwwwwwwwwwwwwwwwwwww',www)
-        print(results_dicts)
+        # print(results_dicts)
         # www['号段'] = www['号段'].astype('str')
 
         cell_province = lujings().cell_province()

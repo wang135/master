@@ -3,6 +3,7 @@ import json
 import requests
 import datetime
 from bs4 import BeautifulSoup
+from akamx.sanfangshuju import Datas
 def shijian(times):
     a1 = times.replace('年','-')
     a2 = a1.replace('月','-')
@@ -13,26 +14,7 @@ def shijian(times):
     return timedte,timness
 
 
-from Gonghangguize.settings import develop as dd
 
-from Gonghangguize.settings import product as pp
-import os
-#name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
-profile = os.environ.get('TYPEIDEA_PROFILE', )
-name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
-#print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
-if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
-    hsa_account_code = dd.hsa_account_code_cs
-    hsa_account_key = dd.hsa_account_key_cs
-    hsa_method = dd.hsa_method
-    hsa_version = dd.hsa_version
-    url = dd.url_cs
-else:
-    hsa_account_code = pp.hsa_account_code_zs
-    hsa_account_key = pp.hsa_account_key_zs
-    hsa_method = pp.hsa_method
-    hsa_version = pp.hsa_version
-    url = pp.url_zs
 
 import datetime
 today = datetime.datetime.today()
@@ -41,37 +23,14 @@ b = a.replace('-','')
 c =b.replace(':','')
 d = c.replace(' ','')
 
-class Bairong:
+class Reople:
     def __init__(self,full_name,id_no,cellphone,id_type):
         self.full_name =full_name
         self.id_no = id_no
         self.cellphone = cellphone
         self.id_type = id_type
 
-    def suiji(self):
-        ids = self.id_no[0:16]
 
-        hsa_business_no = d + ids
-        return hsa_business_no
-    def datas(self):
-        hsa_business_no = self.suiji()
-        data = {
-            "hsa_method": 'credit.credit_single_query',
-            "hsa_version": "v1.0.0",
-            "full_name": self.full_name,
-            "id_no": self.id_no,
-            "cellphone": self.cellphone,
-            "id_type" : self.id_type,
-            "hsa_account_code": hsa_account_code,
-            "hsa_account_key": hsa_account_key,
-            "hsa_business_no": hsa_business_no
-        }
-
-        body = requests.post(url, data=data)
-        soup = BeautifulSoup(body.text, "lxml")
-
-        dict_all = json.loads(soup.get_text())
-        return dict_all
 
     def loaninfo(self,ii):
 
@@ -355,7 +314,7 @@ class Bairong:
 
 
     def renhanghongxian(self):
-        ii = self.datas()
+        ii = Datas(self.full_name, self.id_no, self.cellphone, self.id_type).pboc()
         longestOverdueMonth, list_yuqu_12, list_yue, principalAmount_list, amount_list, len_bishu, list_loan_yuqi,list_num_3,list_currentOverdueAmount_6 = self.loaninfo(ii)
         list_usedMmount_djk, list_usedMmount_amount_djk, list_djk_yuqi, rate_djk, djk_yuqi, djk_six_amount, djk_six_usedMmount, rate_six_djk ,rate_12_djk \
             = self.creditCardInfo(ii)

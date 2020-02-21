@@ -36,7 +36,7 @@ from akamx.lujing import lujings
 from akamx.tongdun import Tongdun
 from akamx.ir import Score
 from rest_framework.response import Response
-from akamx.bairongcelv import sanfang
+from akamx.bairongcelv import Strategy
 from akamx.pboccl import People
 from akamx.models import jsonss
 score = Score()
@@ -96,7 +96,7 @@ class akmoxing(APIView):
                 e = time.clock()
                 logger.info("获取人行的数据{e}".format(e=e))
                 ### 逻辑回归的模型特征
-                bairong = Bairong(names,ids,phone)
+                bairong = Bairong(names,ids,phone,id_type)
 
                 bl_json,xgb_score = bairong.moxing_tz()
                 #print('xgb_scorexgb_scorexgb_scorexgb_score',xgb_score)
@@ -125,11 +125,14 @@ class akmoxing(APIView):
                         ##print('aaaaaaaaaaaaaaaaaaaaaa',jsonss_ser.errors)
                         return jsonss_ser.errors
                     ret = {"code": 6000}
+
                     names = parameter[full_name]
                     ids = parameter[id_no]
                     cntent = names + str(ids) + '6000'
                     mail = SendMail(content=cntent)
                     mail.send_mail()
+                    dd = time.clock()
+                    logger.info("6000结束时间{dd}".format(dd=dd))
                     return HttpResponse(json.dumps(ret, ensure_ascii=False),content_type="application/json,charset=utf-8")
                 else:
                     ret['full_name'] = names
@@ -138,7 +141,7 @@ class akmoxing(APIView):
                     ret['dict_credit_group'] = 0
                     ret['bl_json'] = bl_json
                     ### 策略的数据
-                    tongdun_cl = sanfang(names,ids,phone)
+                    tongdun_cl = Strategy(names,ids,phone,id_type)
                     # dict_br = tongdun_cl.all_cl()
                     dict_strategy_group, dict_strategy_group_br= tongdun_cl.all_cl()
                     ret['cl_td'] = dict_strategy_group
@@ -198,6 +201,8 @@ class akmoxing(APIView):
                 cntent = names + str(ids)+'4000'
                 mail = SendMail(content=cntent)
                 mail.send_mail()
+                aa = time.clock()
+                logger.info("4000结束时间{aa}".format(aa=aa))
                 return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
         except:
             names = parameter[full_name]
@@ -206,6 +211,8 @@ class akmoxing(APIView):
             mail = SendMail(content=cntent)
             mail.send_mail()
             ret = {"code": 5000}
+            bb = time.clock()
+            logger.info("5000结束时间{bb}".format(bb=bb))
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 

@@ -25,6 +25,6 @@ urlpatterns = [
   #   url(r'^yunwei/$',views.yunwei.as_view()),
   #    url(r'^api/$',view.akmoxing.as_view()),
      url(r'^yun/$',view.yunwei.as_view()),
-    url(r'all/',view.urlss.as_view()),
+    url(r'',view.urlss.as_view()),
 
 ]

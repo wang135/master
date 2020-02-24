@@ -1,0 +1,10 @@
+24/Feb/2020 14:10 [Thread-1: 7572]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /
+24/Feb/2020 14:10 [Thread-1: 7572]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST / HTTP/1.1" 404 2030
+24/Feb/2020 14:11 [Thread-2: 15904]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /
+24/Feb/2020 14:11 [Thread-2: 15904]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST / HTTP/1.1" 404 2030
+24/Feb/2020 14:11 [Thread-3: 11908]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /
+24/Feb/2020 14:11 [Thread-3: 11908]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST / HTTP/1.1" 404 2030
+24/Feb/2020 14:11 [Thread-4: 14048]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /
+24/Feb/2020 14:11 [Thread-4: 14048]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST / HTTP/1.1" 404 2030
+24/Feb/2020 14:11 [Thread-5: 21044]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /
+24/Feb/2020 14:11 [Thread-5: 21044]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST / HTTP/1.1" 404 2030

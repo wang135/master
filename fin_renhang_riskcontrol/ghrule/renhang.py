@@ -17,7 +17,7 @@ import os
 profile = os.environ.get('TYPEIDEA_PROFILE', )
 name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
 #print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
-if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
+if profile in ['develop','base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
     hsa_method = dd.hsa_method

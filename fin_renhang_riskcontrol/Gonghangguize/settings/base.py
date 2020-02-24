@@ -86,21 +86,33 @@ WSGI_APPLICATION = 'Gonghangguize.wsgi.application'
 #     }
 # }
 
-### 判断生产和测试环境
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'riskcontrol_acard',
-        'USER': 'riskcontrol_app',
-        'PASSWORD': 'htEu3erj#',
-        'HOST': "test.mysql.proxysql.rw.huashenghaoche.net",
-        'PORT': 3306,
+        'NAME': 'wangzhe',
+        'USER': 'root',
+        'PASSWORD': '1160329981wang',
+        'HOST': '58edd9c77adb6.bj.cdb.myqcloud.com',
+        'PORT': 5432,
         'init_command': 'SET default_storage_engine=MyISAM',
 
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'riskcontrol_acard',
+#         'USER': 'riskcontrol_app',
+#         'PASSWORD': 'htEu3erj#',
+#         'HOST': "test.mysql.proxysql.rw.huashenghaoche.net",
+#         'PORT': 3306,
+#         'init_command': 'SET default_storage_engine=MyISAM',
+#
+#     }
+# }
 
 
 # Password validation

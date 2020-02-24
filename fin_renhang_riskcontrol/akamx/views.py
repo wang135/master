@@ -62,10 +62,12 @@ class akmoxing:
         cellphone = 'cellphone'
         id_type = 'id_type'
         money = 'money'
+        channel = 'channel'
         ret = {"code":'1000'}
+
         # 如果定义的get_phone和get_password都在请求的json中忘下走
         try:
-            if full_name in parameter and id_no in parameter and cellphone in parameter and id_type in parameter:
+            if full_name in parameter and id_no in parameter and cellphone in parameter and id_type in parameter and channel in parameter:
                 ##print('sss',parameter)
                 # 取出其request.json中的phone和password
                 names = parameter[full_name]
@@ -74,6 +76,7 @@ class akmoxing:
                 money = parameter[money]
                 id_type = parameter[id_type]
                 id_type = id_type
+                channel = parameter[channel]
                 b = time.clock()
                 logger.info("requests时间{b}".format(b=b))
 

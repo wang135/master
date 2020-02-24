@@ -6,6 +6,7 @@ class Peopleinfo(models.Model):
     full_name = models.CharField(max_length=100,null=False,verbose_name='客户姓名') # 实际控制人信息
     id_no = models.CharField(max_length=100,null=False,verbose_name='身份证号')# 身份证号码
     cellphone = models.CharField(max_length=100,null=False,verbose_name='身份证号')# 电话
+    channel = models.CharField(max_length=100,null=False,verbose_name='渠道')# 渠道
     dateTime = models.DateTimeField(auto_now_add=True) ###时间
 
 

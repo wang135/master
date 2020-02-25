@@ -1,0 +1,14 @@
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间7.7713956
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间7.7724182
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间7.772767
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间7.8330957
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据7.8334157
+21/Feb/2020 11:37 [Thread-1: 17560]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:104 INFO - 获取三方数据11.158151
+21/Feb/2020 11:37 [Thread-1: 17560]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /api/ HTTP/1.1" 200 14
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间13.8266329
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间13.8269943
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间13.8273524
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间13.8748674
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据13.8751916
+21/Feb/2020 11:37 [Thread-2: 7004]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:104 INFO - 获取三方数据17.1045638
+21/Feb/2020 11:37 [Thread-2: 7004]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /api/ HTTP/1.1" 200 14

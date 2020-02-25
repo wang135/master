@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = 'qcb%nds7i63n-=e3%@4+939m89m@_912xaj6f03%fv^ll#j!^w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -227,13 +227,3 @@ hsa_account_key_zs="d364129b4fdb134c2c78919fe4290978",
 url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
 
 
-
-
-# ##新增邮箱账号
-# username='1160329981@qq.com'
-# passwd='idjvjcsuwtyefjca'
-# recv=['jingwang28@huashenghaoche.com']
-# title='错误提示'
-# content='工行规则项目报错'
-# file= os.path.join(LOG_DIR, filename)
-# ssl=True

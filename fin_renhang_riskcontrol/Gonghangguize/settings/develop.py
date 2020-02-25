@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-#print('dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+#print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -86,7 +86,8 @@ WSGI_APPLICATION = 'Gonghangguize.wsgi.application'
 #     }
 # }
 
-### 判断生产和测试环境
+
+
 
 
 DATABASES = {
@@ -142,7 +143,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 # 日志日志
-filename ='riw_dev'
+filename ='riw'
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)

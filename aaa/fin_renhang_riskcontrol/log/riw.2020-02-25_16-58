@@ -1,0 +1,3 @@
+25/Feb/2020 16:58 [Thread-3: 876]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "GET /yun/ HTTP/1.1" 200 5
+25/Feb/2020 16:58 [Thread-4: 12088]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 14
+25/Feb/2020 16:58 [Thread-5: 21144]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 14

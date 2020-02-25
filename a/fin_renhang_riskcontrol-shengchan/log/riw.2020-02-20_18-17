@@ -1,0 +1,77 @@
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间3.8852109
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间3.8863062
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间3.8866609
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间3.9458633
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据3.9461627
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:104 INFO - 获取三方数据5.2791689
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:164 INFO - 输出最终数据6.3231856
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:174 INFO - 保存数据6.3454797
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:190 INFO - 结束时间6.3458829
+20/Feb/2020 18:17 [Thread-1: 19628]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:192 INFO - 总共用时间是2.460672
+20/Feb/2020 18:17 [Thread-1: 19628]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /api/ HTTP/1.1" 200 15
+20/Feb/2020 18:17 [Thread-2: 19496]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间7.4581475
+20/Feb/2020 18:17 [Thread-2: 19496]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间7.4585427
+20/Feb/2020 18:17 [Thread-2: 19496]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间7.4588332
+20/Feb/2020 18:17 [Thread-2: 19496]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间7.5089853
+20/Feb/2020 18:17 [Thread-2: 19496]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据7.5092791
+20/Feb/2020 18:17 [Thread-2: 19496]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /api/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py", line 101, in post
+    bl_json,xgb_score = bairong.moxing_tz()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py", line 252, in moxing_tz
+    bl_json,xgb_score = self.bar_moing(results_br)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py", line 124, in bar_moing
+    www = lujins.shenfen()
+TypeError: 'DataFrame' object is not callable
+20/Feb/2020 18:17 [Thread-2: 19496]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /api/ HTTP/1.1" 500 17079
+20/Feb/2020 18:17 [Thread-3: 5472]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间9.7817757
+20/Feb/2020 18:17 [Thread-3: 5472]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间9.7822864
+20/Feb/2020 18:17 [Thread-3: 5472]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间9.7827674
+20/Feb/2020 18:17 [Thread-3: 5472]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间9.8284441
+20/Feb/2020 18:17 [Thread-3: 5472]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据9.8287404
+20/Feb/2020 18:17 [Thread-3: 5472]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /api/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py", line 101, in post
+    bl_json,xgb_score = bairong.moxing_tz()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py", line 252, in moxing_tz
+    bl_json,xgb_score = self.bar_moing(results_br)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py", line 124, in bar_moing
+    www = lujins.shenfen()
+TypeError: 'DataFrame' object is not callable
+20/Feb/2020 18:17 [Thread-3: 5472]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /api/ HTTP/1.1" 500 17079

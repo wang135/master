@@ -1,0 +1,5 @@
+24/Feb/2020 16:34 [Thread-1: 9848]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:170 INFO - 输出最终数据18.3225292
+24/Feb/2020 16:34 [Thread-1: 9848]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:202 INFO - 保存数据18.344113
+24/Feb/2020 16:34 [Thread-1: 9848]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:209 INFO - 结束时间18.3444514
+24/Feb/2020 16:34 [Thread-1: 9848]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:211 INFO - 总共用时间是12.9634784
+24/Feb/2020 16:34 [Thread-1: 9848]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 15

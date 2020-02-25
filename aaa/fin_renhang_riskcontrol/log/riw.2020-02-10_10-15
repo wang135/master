@@ -1,0 +1,54 @@
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:43 INFO - 开始时间4.7784912
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:49 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:68 INFO - hellll
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:85 INFO - 开始调用时间4.7804946
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间4.7807186
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间5.0322405
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.2515219000000002
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间5.1100524
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.3293337999999997
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.7637293833794175
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:90 INFO - 调用结束的时间5.1106888
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:91 INFO - 调用总共的时间0.3301942000000002
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:92 INFO - 4000
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 结束时间时间和获取三方数据时间结束时间0.000560000000000116
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 结束时间时间0.3327575999999999
+10/Feb/2020 10:15 [Thread-1: 16280]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:100 INFO - 三方时间和总时间的比例0.9922964945053105
+10/Feb/2020 10:15 [Thread-1: 16280]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:43 INFO - 开始时间42.2657907
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:49 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:68 INFO - hellll
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:85 INFO - 开始调用时间42.2670507
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间42.267289
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间42.4505217
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.1832327000000049
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间42.5312231
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.26393410000000017
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.6942365537458206
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:90 INFO - 调用结束的时间42.531688
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:91 INFO - 调用总共的时间0.26463730000000396
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:92 INFO - 4000
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 结束时间时间和获取三方数据时间结束时间0.00038969999999949323
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 结束时间时间0.2662870000000055
+10/Feb/2020 10:16 [Thread-2: 17344]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:100 INFO - 三方时间和总时间的比例0.9938048045905301
+10/Feb/2020 10:16 [Thread-2: 17344]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:43 INFO - 开始时间63.3473082
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:49 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:68 INFO - hellll
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:85 INFO - 开始调用时间63.3490959
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间63.3494187
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间63.5304849
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.1810661999999965
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间63.6271299
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.2777111999999988
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.6519945900633366
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:90 INFO - 调用结束的时间63.6280563
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:91 INFO - 调用总共的时间0.27896039999999545
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:92 INFO - 4000
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 结束时间时间和获取三方数据时间结束时间0.0006985999999997716
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 结束时间时间0.2814466999999965
+10/Feb/2020 10:16 [Thread-3: 124]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:100 INFO - 三方时间和总时间的比例0.99116600052514
+10/Feb/2020 10:16 [Thread-3: 124]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /gonghang/ HTTP/1.1" 200 14

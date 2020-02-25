@@ -16,26 +16,9 @@ from Emailsend.send import  SendMail
 import logging
 logger = logging.getLogger('django')
 
-## 自动发邮件邮箱的设置
-username=settings.username
-passwd=settings.passwd
-recv=settings.recv
-title=settings.title
-content=settings.content
-file= settings.file
-ssl=settings.ssl
 
-mail = SendMail(
-        username,
-        passwd,
-        recv,
-        title,
-        content,
-        file,
-        ssl,
-    )
 a = time.clock()
-logger.info("开始时间",a)
+logger.info("开始时间{a}".format(a=a))
 
 class gonghangrule(APIView):
     # 定义请求方法为post，
@@ -93,7 +76,12 @@ class gonghangrule(APIView):
         except:
             ret = {"code":'5000'}
             logger.info("错误的信息",ret)
+            names = parameter[full_name]
+            ids = parameter[id_no]
+            cntent = names + str(ids)+'gonghang'
+            mail = SendMail(content=cntent)
             mail.send_mail()
+            # mail.send_mail()
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 class yunwei(APIView):

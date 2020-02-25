@@ -1,53 +1,34 @@
 import numpy as np
-
-from ghrule.forms import RuleSerializer
-from ghrule.models import Rule
 import time
 import json
 import requests
 import datetime
 from bs4 import BeautifulSoup
 import socket
-from Gonghangguize.settings import develop as dd
-
-from Gonghangguize.settings import product as pp
-#import Gonghangguize.settings as settings
-import os
-#name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
-profile = os.environ.get('TYPEIDEA_PROFILE', )
-name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
-#print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
-if profile in ['develop','base']:
-    hsa_account_code = dd.hsa_account_code_cs
-    hsa_account_key = dd.hsa_account_key_cs
-    hsa_method = dd.hsa_method
-    hsa_version = dd.hsa_version
-    url = dd.url_cs
-else:
-    hsa_account_code = pp.hsa_account_code_zs
-    hsa_account_key = pp.hsa_account_key_zs
-    hsa_method = pp.hsa_method
-    hsa_version = pp.hsa_version
-    url = pp.url_zs
-
-# from Gonghangguize.settings import base as aa
-#
-# from Gonghangguize.settings import develop as aa
-#
-# from Gonghangguize.settings import product as aa
-#import Gonghangguize.settings as settings
-
-
-#BASE_DIR = settings.BASE_DIR
+import Gonghangguize.settings as settings
+myname = socket.getfqdn(socket.gethostname(  ))
+myaddr = socket.gethostbyname(myname)
+BASE_DIR = settings.BASE_DIR
 #print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
 
 import logging
 logger = logging.getLogger('django')
 
-
-
-
-
+hsa_account_code = ''
+hsa_account_key = ''
+url = ''
+if myaddr =='172.16.1.116':
+    hsa_account_code = settings.hsa_account_code_cs
+    hsa_account_key = settings.hsa_account_key_cs
+    url = settings.url_cs
+elif myaddr =='10.6.105.30':
+    hsa_account_code = settings.hsa_account_code_cs
+    hsa_account_key = settings.hsa_account_key_cs
+    url = settings.url_cs
+else:
+    hsa_account_code = settings.hsa_account_code_zs
+    hsa_account_key = settings.hsa_account_key_zs
+    url = settings.url_zs
 
 #print('wwwwwwwwwwwww',hsa_account_code,hsa_account_key,url)
 
@@ -59,7 +40,8 @@ b = a.replace('-','')
 c =b.replace(':','')
 d = c.replace(' ','')
 
-
+import random
+random.randrange(0, 10000001, 6)
 
 class People:
     def __init__(self, full_name, id_no,id_type):
@@ -72,12 +54,10 @@ class People:
         hsa_business_no = d+ids
         return hsa_business_no
     def datas(self):
-
-
         hsa_business_no = self.suiji()
         data = {
-            "hsa_method": hsa_method,
-            "hsa_version": hsa_version,
+            "hsa_method": settings.hsa_method,
+            "hsa_version": settings.hsa_version,
             "full_name": self.full_name,
             "id_no": self.id_no,
             "id_type" : self.id_type,
@@ -91,17 +71,13 @@ class People:
         while n <5:
             try:
 
-                body = requests.post(url,timeout = 5, data=data)
+                body = requests.post(url,timeout = 30, data=data)
                 soup = BeautifulSoup(body.text, "lxml")
 
                 dict_all = json.loads(soup.get_text())
-                #print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', dict_all)
-
-
             except:
                 n+=1
-            # logger.info("获取人行接口失败")
-
+            logger.info("获取人行接口失败")
             return dict_all
 
         #print('dict_alldict_all',dict_all)
@@ -131,11 +107,11 @@ class People:
                         month24RepayStatus3 = month24RepayStatus3.replace('G', '0')
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
-                        #print(month24RepayStatus4)
+                        print(month24RepayStatus4)
                         list_djk_max1.append(month24RepayStatus_maax)
 
                         len_djk = len([float(x) for x in month24RepayStatus4 if float(x) > 0])
-
+                        print(len_djk)
                         list_djk_len1.append(len_djk)
 
                         accountStatus = cd['accountStatus']
@@ -159,11 +135,11 @@ class People:
                         month24RepayStatus3 = month24RepayStatus3.replace('C', '0')
                         month24RepayStatus3 = month24RepayStatus3.replace('G', '0')
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
-                        #print(month24RepayStatus4)
+                        print(month24RepayStatus4)
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
                         list_djk_max1.append(month24RepayStatus_maax)
                         len_djk = len([float(x) for x in month24RepayStatus4 if float(x) > 0])
-
+                        print(len_djk)
                         list_djk_len1.append(len_djk)
 
                         accountStatus = cd['accountStatus']
@@ -201,11 +177,11 @@ class People:
                         month24RepayStatus3 = month24RepayStatus3.replace('D', '0')
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
-                        #print(month24RepayStatus4)
+                        print(month24RepayStatus4)
                         list_loan_san.append(month24RepayStatus_maax)
 
                         len_djk = len([float(x) for x in month24RepayStatus4 if float(x) > 0])
-
+                        print(len_djk)
                         list_loan_len1.append(len_djk)
 
                         accountStatus = cd['accountStatus']
@@ -231,11 +207,11 @@ class People:
                         month24RepayStatus3 = month24RepayStatus3.replace('G', '0')
                         month24RepayStatus3 = month24RepayStatus3.replace('D', '0')
                         month24RepayStatus4 = month24RepayStatus3.split(' ')
-                        #print(month24RepayStatus4)
+                        print(month24RepayStatus4)
                         month24RepayStatus_maax = max([float(x) for x in month24RepayStatus4])
                         list_loan_san.append(month24RepayStatus_maax)
                         len_djk = len([float(x) for x in month24RepayStatus4 if float(x) > 0])
-
+                        print(len_djk)
                         list_loan_len1.append(len_djk)
 
                         accountStatus = cd['accountStatus']
@@ -267,7 +243,7 @@ class People:
                     'cumulativeCompenAmount'].replace(',', '')
                 cumulativeCompenAmount = float(cumulativeCompenAmount)
                 list_cumulativeCompenAmount.append(cumulativeCompenAmount)
-                #print('cumulativeCompenAmount', cumulativeCompenAmount)
+                print('cumulativeCompenAmount', cumulativeCompenAmount)
             else:
                 cumulativeCompenAmount = 0
             list_cumulativeCompenAmount.append(cumulativeCompenAmount)
@@ -303,19 +279,11 @@ class People:
 
     def renhanhgomngshang(self):
 
-        ee = time.clock()
-        logger.info("调取人行接口开始时间{ee}".format(ee=ee))
-        ii = self.datas()
-        #print('sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', ii)
-        ff = time.clock()
-        logger.info("调取人行接口结束时间{ff}".format(ff=ff))
-        huoqu = ff - ee
-        logger.info("调取人行接口总共所用时间{huoqu}".format(huoqu=huoqu))
 
-        #print('rrrr',ii['credit_result_json']['reportMessage'].keys())
+        ii = self.datas()
+        print('rrrr',ii['credit_result_json']['reportMessage'].keys())
         code = ii['hsa_status']
-        #
-        #print('codecode',code)
+        print('codecode',code)
         if code ==1:
             list_djk_max1, list_djk_len1, accountStatus_list = self.creditCardInfo(ii)
 
@@ -336,48 +304,13 @@ class People:
             list_condit = [x for x in accountStatus_all if x in status]
             ###计算代偿金额
             cumulativeCompenAmount = max(list_cumulativeCompenAmount)
-            ### 字段写入数据库
-            # rule = Rule()
-            # rule.full_name = self.full_name
-            # rule.id_no = self.id_no
-            # rule.all_list_san = max(all_list_san)
-            # rule.list_len_all = max(list_len_all)
-            #
-            # rule.cumulativeCompenAmount = cumulativeCompenAmount
-            # rule.condit = len(list_condit)
-            # rule.save()
-            n = 0
-            while n < 5:
-                try:
-                    rule = Rule()
-                    rule = Rule()
-                    rule.full_name = self.full_name
-                    rule.id_no = self.id_no
-                    rule.all_list_san = max(all_list_san)
-                    rule.list_len_all = max(list_len_all)
-
-                    rule.cumulativeCompenAmount = cumulativeCompenAmount
-                    rule.condit = len(list_condit)
-                    rule.save()
-                    break
-                except:
-                    n += 1
-
             if max(all_list_san) > 3 or max(list_len_all) > 8 or cumulativeCompenAmount > 0 or len(list_condit) > 0:
                 code = 1000
             else:
                 code = 4000
-            #print('code', code)
-        ##
+            print('code', code)
         else:
             code = 0000
-        logger.info("错误的信息{code}".format(code= code))
-        #mail.send_mail()
-        gg = time.clock()
-
-        logger.info("调取函数结束时间{gg}".format(gg=gg))
-        all_time =gg-ee
-        logger.info("总共所用时间{all_time}".format(all_time=all_time))
-        diff_hanshu = huoqu/all_time
-        logger.info("调取人行数据和总函数时间的比例{diff_hanshu}".format(diff_hanshu=diff_hanshu))
+            logger.info("错误的信息0000", code)
+            #mail.send_mail()
         return code

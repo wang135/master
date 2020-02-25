@@ -1,0 +1,12 @@
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:78 INFO - requests时间7.7115355
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:82 INFO - 获取客户的时间7.7126545
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 保存客户的时间7.7603142
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:97 INFO - 获取人行的数据7.7606446
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:104 INFO - 获取三方数据9.4200393
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:167 INFO - 输出最终数据10.4640041
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:177 INFO - 保存数据10.4850317
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:193 INFO - 结束时间10.4853966
+21/Feb/2020 16:39 [Thread-1: 22028]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:215 INFO - 5000结束时间11.3263335
+21/Feb/2020 16:39 [Thread-1: 22028]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /all/ HTTP/1.1" 200 14
+21/Feb/2020 16:40 [Thread-1: 20356]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /api/
+21/Feb/2020 16:40 [Thread-1: 20356]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "POST /api/ HTTP/1.1" 404 1957

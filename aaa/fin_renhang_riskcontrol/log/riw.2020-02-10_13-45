@@ -1,0 +1,170 @@
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:25 INFO - 开始时间91.6432206
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:31 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:55 INFO - 开始调用时间91.6448308
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间91.6450139
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间91.8379028
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.1928888999999998
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间91.9207637
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.2757497999999998
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.699506944338672
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:60 INFO - 调用结束的时间91.9240447
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:61 INFO - 调用总共的时间0.279213900000002
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:62 INFO - 4000
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 错误的信息
+10/Feb/2020 13:45 [Thread-2: 9876]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 错误时候返回来所用时间0.4939688999999987
+10/Feb/2020 13:45 [Thread-2: 9876]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /gonghang/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 69, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 63, in send_mail
+    self.smtp.login(self.username,self.passwd)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 630, in auth
+    response = encode_base64(initial_response.encode('ascii'), eol='')
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 16-17: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 100, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 63, in send_mail
+    self.smtp.login(self.username,self.passwd)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 630, in auth
+    response = encode_base64(initial_response.encode('ascii'), eol='')
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 16-17: ordinal not in range(128)
+10/Feb/2020 13:45 [Thread-2: 9876]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /gonghang/ HTTP/1.1" 500 17929
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:25 INFO - 开始时间93.1384849
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:31 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:55 INFO - 开始调用时间93.1392911
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间93.1395188
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间93.3267269
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.18720809999999233
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间93.4104554
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.27093659999999886
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.6909664475009767
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:60 INFO - 调用结束的时间93.4111352
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:61 INFO - 调用总共的时间0.2718441000000098
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:62 INFO - 4000
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 错误的信息
+10/Feb/2020 13:45 [Thread-3: 12588]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 错误时候返回来所用时间0.46761520000001155
+10/Feb/2020 13:45 [Thread-3: 12588]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /gonghang/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 69, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 63, in send_mail
+    self.smtp.login(self.username,self.passwd)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 630, in auth
+    response = encode_base64(initial_response.encode('ascii'), eol='')
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 16-17: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 100, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 63, in send_mail
+    self.smtp.login(self.username,self.passwd)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "C:\ProgramData\Anaconda3\lib\smtplib.py", line 630, in auth
+    response = encode_base64(initial_response.encode('ascii'), eol='')
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 16-17: ordinal not in range(128)
+10/Feb/2020 13:45 [Thread-3: 12588]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /gonghang/ HTTP/1.1" 500 17929
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:25 INFO - 开始时间6.2581779
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:31 INFO - {'full_name': '庞明', 'id_type': '0', 'id_no': '511304199906271151'}
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:55 INFO - 开始调用时间6.259187
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:309 INFO - 调取人行接口开始时间6.2594074
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:313 INFO - 调取人行接口结束时间6.4476165
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:315 INFO - 调取人行接口总共所用时间0.1882090999999999
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:375 INFO - 错误的信息4000
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:379 INFO - 调取函数结束时间6.5274931
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:381 INFO - 总共所用时间0.2680857000000003
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\renhang.py:renhanhgomngshang:383 INFO - 调取人行数据和总函数时间的比例0.702048262924877
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:60 INFO - 调用结束的时间6.5308039
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:61 INFO - 调用总共的时间0.2716169000000006
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:62 INFO - 4000
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:97 INFO - 错误的信息
+10/Feb/2020 13:45 [Thread-1: 6384]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py:post:99 INFO - 错误时候返回来所用时间0.2776399000000005
+10/Feb/2020 13:45 [Thread-1: 6384]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /gonghang/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 69, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 54, in send_mail
+    msg.attach(MIMEText(self.content))#邮件正文的内容
+  File "C:\ProgramData\Anaconda3\lib\email\mime\text.py", line 34, in __init__
+    _text.encode('us-ascii')
+AttributeError: 'dict' object has no attribute 'encode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\ghrule\views.py", line 100, in post
+    mail.send_mail()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\Emailsend\send.py", line 54, in send_mail
+    msg.attach(MIMEText(self.content))#邮件正文的内容
+  File "C:\ProgramData\Anaconda3\lib\email\mime\text.py", line 34, in __init__
+    _text.encode('us-ascii')
+AttributeError: 'dict' object has no attribute 'encode'
+10/Feb/2020 13:45 [Thread-1: 6384]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /gonghang/ HTTP/1.1" 500 17468

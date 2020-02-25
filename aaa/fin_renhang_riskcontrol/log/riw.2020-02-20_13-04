@@ -1,0 +1,38 @@
+20/Feb/2020 13:04 [Thread-1: 13208]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:53 INFO - 开始时间5.4576174
+20/Feb/2020 13:04 [Thread-1: 13208]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:78 INFO - requests时间5.4589623
+20/Feb/2020 13:04 [Thread-1: 13208]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:82 INFO - 获取客户的时间5.462201
+20/Feb/2020 13:04 [Thread-1: 13208]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:90 INFO - 保存客户的时间5.5104478
+20/Feb/2020 13:04 [Thread-1: 13208]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:post:97 INFO - 获取人行的数据5.510815
+20/Feb/2020 13:04 [Thread-1: 13208]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py:handle_uncaught_exception:118 ERROR - Internal Server Error: /api/
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\ProgramData\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py", line 101, in post
+    bl_json = bairong.moxing_tz()
+  File "C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py", line 284, in moxing_tz
+    p = xgb.predict_proba(df_all[feature])[:, 1]
+  File "C:\ProgramData\Anaconda3\lib\site-packages\xgboost\sklearn.py", line 829, in predict_proba
+    test_dmatrix = DMatrix(data, missing=self.missing, nthread=self.n_jobs)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\xgboost\core.py", line 380, in __init__
+    feature_types)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\xgboost\core.py", line 239, in _maybe_pandas_data
+    raise ValueError(msg + ', '.join(bad_fields))
+ValueError: DataFrame.dtypes for data must be int, float or bool.
+                Did not expect the data types in fields ir_id_x_cell_notmat_days, frg_group_num, id_city
+20/Feb/2020 13:04 [Thread-1: 13208]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 ERROR - "POST /api/ HTTP/1.1" 500 17651

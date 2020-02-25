@@ -1,0 +1,2 @@
+24/Feb/2020 10:35 [Thread-3: 16296]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:221 INFO - 4000结束时间1313.1033246
+24/Feb/2020 10:35 [Thread-3: 16296]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST /all/ HTTP/1.1" 200 14

@@ -7,8 +7,8 @@ from Gonghangguize.settingss import develop as dd
 import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 
-profile = os.environ.get('TYPEIDEA_PROFILE', )
-name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
+# profile = os.environ.get('TYPEIDEA_PROFILE', )
+# name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
 ##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 # if profile in ['develop','base']:
 hsa_account_code = dd.hsa_account_code_cs

@@ -14,16 +14,16 @@ def shijian(times):
     timedte = (today - timness).days
     return timedte, timness
 
-from Gonghangguize.settings import develop as dd
+from Gonghangguize.settingss import develop as dd
 
-from Gonghangguize.settings import product as pp
-#import Gonghangguize.settings as settings
+from Gonghangguize.settingss import product as pp
+#import Gonghangguize.settingss as settingss
 import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 profile = os.environ.get('TYPEIDEA_PROFILE', )
 name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
 ##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
-if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
+if name in ['Gonghangguize.settingss.develop','Gonghangguize.settingss.base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
     hsa_method = dd.hsa_method
@@ -39,7 +39,7 @@ else:
 
 
 ##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
-if name in ['Gonghangguize.settings.develop','Gonghangguize.settings.base']:
+if name in ['Gonghangguize.settingss.develop','Gonghangguize.settingss.base']:
     hsa_account_code = dd.hsa_account_code_cs
     hsa_account_key = dd.hsa_account_key_cs
     hsa_method = dd.hsa_method

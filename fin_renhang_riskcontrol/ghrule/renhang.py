@@ -8,10 +8,10 @@ import requests
 import datetime
 from bs4 import BeautifulSoup
 import socket
-from Gonghangguize.settings import develop as dd
+from Gonghangguize.settingss import develop as dd
 
-from Gonghangguize.settings import product as pp
-#import Gonghangguize.settings as settings
+from Gonghangguize.settingss import product as pp
+#import Gonghangguize.settingss as settingss
 import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 profile = os.environ.get('TYPEIDEA_PROFILE', )
@@ -30,15 +30,15 @@ else:
     hsa_version = pp.hsa_version
     url = pp.url_zs
 
-# from Gonghangguize.settings import base as aa
+# from Gonghangguize.settingss import base as aa
 #
-# from Gonghangguize.settings import develop as aa
+# from Gonghangguize.settingss import develop as aa
 #
-# from Gonghangguize.settings import product as aa
-#import Gonghangguize.settings as settings
+# from Gonghangguize.settingss import product as aa
+#import Gonghangguize.settingss as settingss
 
 
-#BASE_DIR = settings.BASE_DIR
+#BASE_DIR = settingss.BASE_DIR
 #print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
 
 import logging

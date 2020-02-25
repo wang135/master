@@ -3,7 +3,7 @@ import django
 import logging
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'csquanxian.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'csquanxian.settingss')
 django.setup()
 
 

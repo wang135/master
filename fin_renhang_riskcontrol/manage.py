@@ -4,11 +4,11 @@ import sys
 
 if __name__ == "__main__":
     #系统配置的
-    #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Gonghangguize.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Gonghangguize.settings")
     ##新的
     # 新修改的
-    profile = os.environ.get('TYPEIDEA_PROFILE', )
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.settings.%s' % profile)
+    # profile = os.environ.get('TYPEIDEA_PROFILE', )
+    # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.settingss.%s' % profile)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

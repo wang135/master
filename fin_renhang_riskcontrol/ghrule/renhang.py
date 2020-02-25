@@ -8,8 +8,8 @@ import requests
 import datetime
 from bs4 import BeautifulSoup
 import socket
-from Gonghangguize.settingss import develop as dd
-
+# from Gonghangguize.settingss import develop as dd
+from Gonghangguize.settingss import product as pp
 
 #import Gonghangguize.settingss as settingss
 import os
@@ -18,11 +18,11 @@ import os
 # name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
 # #print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 # if profile in ['develop','base']:
-hsa_account_code = dd.hsa_account_code_cs
-hsa_account_key = dd.hsa_account_key_cs
-hsa_method = dd.hsa_method
-hsa_version = dd.hsa_version
-url = dd.url_cs
+hsa_account_code =pp.hsa_account_code_cs
+hsa_account_key = pp.hsa_account_key_cs
+hsa_method = pp.hsa_method
+hsa_version = pp.hsa_version
+url = pp.url_cs
 # else:
 #     hsa_account_code = pp.hsa_account_code_zs
 #     hsa_account_key = pp.hsa_account_key_zs

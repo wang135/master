@@ -1,10 +1,10 @@
 
 
-from Gonghangguize.settingss import develop as dd
+# from Gonghangguize.settingss import develop as dd
 
-# from Gonghangguize.settingss import product as pp
+#获取生产的嗡嗡嗡
+from Gonghangguize.settingss import product as pp
 #import Gonghangguize.settingss as settingss
-
 import os
 #name = os.environ.get('TYPEIDEA_PROFILE', 'develop')
 
@@ -12,17 +12,17 @@ import os
 # name = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Gonghangguize.%s' %profile)
 ##print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',name)
 # if profile in ['develop','base']:
-hsa_account_code = dd.hsa_account_code_cs
-hsa_account_key = dd.hsa_account_key_cs
-hsa_method = dd.hsa_method
-hsa_version = dd.hsa_version
-url = dd.url_cs
+# hsa_account_code = dd.hsa_account_code_cs
+# hsa_account_key = dd.hsa_account_key_cs
+# hsa_method = dd.hsa_method
+# hsa_version = dd.hsa_version
+# url = dd.url_cs
 # else:
-#     hsa_account_code = pp.hsa_account_code_zs
-#     hsa_account_key = pp.hsa_account_key_zs
-#     hsa_method = pp.hsa_method
-#     hsa_version = pp.hsa_version
-#     url = pp.url_zs
+hsa_account_code = pp.hsa_account_code_zs
+hsa_account_key = pp.hsa_account_key_zs
+hsa_method = pp.hsa_method
+hsa_version = pp.hsa_version
+url = pp.url_zs
 
 import json
 from bs4 import BeautifulSoup
@@ -113,21 +113,25 @@ class Datas:
             return 4000
 
     def pboc(self):
-        hsa_business_no = self.suiji()
-        data = {
-            "hsa_method": 'credit.credit_single_query',
-            "hsa_version": "v1.0.0",
-            "full_name": self.full_name,
-            "id_no": self.id_no,
-            "cellphone": self.cellphone,
-            "id_type": self.id_type,
-            "hsa_account_code": hsa_account_code,
-            "hsa_account_key": hsa_account_key,
-            "hsa_business_no": hsa_business_no
-        }
+        try:
+            hsa_business_no = self.suiji()
+            data = {
+                "hsa_method": 'credit.credit_single_query',
+                "hsa_version": "v1.0.0",
+                "full_name": self.full_name,
+                "id_no": self.id_no,
+                "cellphone": self.cellphone,
+                "id_type": self.id_type,
+                "hsa_account_code": hsa_account_code,
+                "hsa_account_key": hsa_account_key,
+                "hsa_business_no": hsa_business_no
+            }
 
-        body = requests.post(url, data=data)
-        soup = BeautifulSoup(body.text, "lxml")
+            body = requests.post(url, data=data)
+            soup = BeautifulSoup(body.text, "lxml")
 
-        dict_all = json.loads(soup.get_text())
+            dict_all = json.loads(soup.get_text())
+        except:
+            codess = 4000
+            return 4000
         return dict_all

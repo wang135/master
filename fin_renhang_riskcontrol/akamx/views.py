@@ -93,9 +93,9 @@ class akmoxing:
                 logger.info("保存客户的时间{d}".format(d=d))
 
 
-                ### 人行的征信数据
-                # People_renhang = People(names,ids,phone,id_type)
-                # dict_credit_group, dict_credit_child = People_renhang.renhanghongxian()
+                ## 人行的征信数据
+                People_renhang = People(names,ids,phone,id_type)
+                dict_credit_group, dict_credit_child = People_renhang.renhanghongxian()
                 e = time.clock()
                 logger.info("获取人行的数据{e}".format(e=e))
                 ### 逻辑回归的模型特征
@@ -109,7 +109,7 @@ class akmoxing:
                     ret['full_name'] = names
                     ret['id_no'] = ids
                     # ret['dict_credit_group'] = dict_credit_group
-                    ret['dict_credit_group'] = 0
+                    ret['dict_credit_group'] = dict_credit_group
                     ret['bl_json'] = bl_json
 
                     ret['cl_td'] = -99
@@ -141,7 +141,7 @@ class akmoxing:
                     ret['full_name'] = names
                     ret['id_no'] = ids
                     #ret['dict_credit_group'] = dict_credit_group
-                    ret['dict_credit_group'] = 0
+                    ret['dict_credit_group'] = dict_credit_group
                     ret['bl_json'] = bl_json
                     ### 策略的数据
                     tongdun_cl = Strategy(names,ids,phone,id_type)

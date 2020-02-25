@@ -102,7 +102,7 @@ class akmoxing:
                 bairong = Bairong(names,ids,phone,id_type)
 
                 bl_json,xgb_score = bairong.moxing_tz()
-                #print('xgb_scorexgb_scorexgb_scorexgb_score',xgb_score)
+                # print('xgb_scorexgb_scorexgb_scorexgb_score',bl_json,xgb_score)
                 f = time.clock()
                 logger.info("获取三方数据{f}".format(f=f))
                 if 'tongdun' in bl_json.keys() or 'bairong' in bl_json.keys():
@@ -257,12 +257,18 @@ class urlss(APIView):
 
         # json转字典
         parameter = json.loads(parameter_json)
-        url = 'url'
-        url = parameter[url]
-        if url =='api':
-            a = akmoxing().gets(parameter)
-        elif url =='gonghangrule':
-            a = gonghangrule().get(parameter)
-        else:
-            a = yunwei(APIView).get(request)
-        return HttpResponse(a)
+
+        try:
+            url = 'url'
+
+            url = parameter[url]
+            if url =='api':
+                a = akmoxing().gets(parameter)
+            elif url =='gonghangrule':
+                a = gonghangrule().get(parameter)
+            else:
+                a = yunwei(APIView).get(request)
+            return HttpResponse(a)
+        except:
+            ret = {"code": 4000}
+            return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")

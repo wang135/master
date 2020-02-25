@@ -7,7 +7,7 @@ import datetime
 from akamx.lujing import lujings
 
 from akamx.xgboost import xgboost
-
+import time
 import pandas as pd
 import logging
 logger = logging.getLogger('django')
@@ -140,13 +140,21 @@ class Bairong:
             dict_moxing = {'tongdun':codes}
             return dict_moxing
     def moxing_tz(self):
+        aa = time.clock()
 
         results_br = Datas(self.full_name,self.id_no,self.cellphone,self.id_type).requestss()
-        #results_br = self.requestss()
+        bb = time.clock()
+        cc = bb-aa
+        logger.info("百融数据结束{cc}".format(cc=cc))
+        # print('1111111111111111111',results_br)
+
         ##print('kaishikaishisssssssssssssssssssssssssss')
         bl_json,xgb_score = self.bar_moing(results_br)
-        #print('bbbbbbbbbbbbbbbbbbbbbbb',xgb_score[0])
+        dd = time.clock()
+        da = dd-bb
+        logger.info("XGBOOST{da}".format(da=da))
         results_td = Datas(self.full_name,self.id_no,self.cellphone,self.id_type).tongdun_requests()
+        # print('1111111111111111111', results_br)
         #results_td = self.tongdun_requests()
         td_jisuan = self.tongdun_jisuan(results_td)
         bl_json.update(td_jisuan)

@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 from ghrule.forms import PeopleinfoModelSerializer
 from ghrule.renhang import People
 
-import Gonghangguize.settings as settings
+import Gonghangguize.settingss as settings
 
 from Emailsend.send import  SendMail
 import logging

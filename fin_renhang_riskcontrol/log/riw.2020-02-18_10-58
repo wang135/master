@@ -1,3 +1,0 @@
-18/Feb/2020 10:58 [Thread-3: 7080]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "GET /yunwei/ HTTP/1.1" 200 5
-18/Feb/2020 10:59 [Thread-4: 5944]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "GET /yun/ HTTP/1.1" 200 5
-18/Feb/2020 10:59 [Thread-5: 164]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "GET /yun/ HTTP/1.1" 200 5

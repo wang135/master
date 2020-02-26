@@ -1,2 +1,0 @@
-11/Feb/2020 10:54 [Thread-3: 14164]C:\ProgramData\Anaconda3\lib\site-packages\django\core\handlers\base.py:get_response:93 WARNING - Not Found: /pfk/a/
-11/Feb/2020 10:54 [Thread-3: 14164]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 WARNING - "GET /pfk/a/ HTTP/1.1" 404 2078

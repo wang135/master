@@ -1,6 +1,0 @@
-
-django==2.0
-PyMySQL==0.9.3
-requests==2.22.0
-djangorestframework==3.10.3
-xgboost==0.90

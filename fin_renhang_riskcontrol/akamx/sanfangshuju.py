@@ -1,7 +1,7 @@
 
 #######
 from Gonghangguize.settingss import develop as dd
-
+print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
 from Gonghangguize.settingss import product as pp
 #import Gonghangguize.settingss as settingss
 import socket

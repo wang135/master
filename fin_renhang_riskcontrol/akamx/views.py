@@ -265,11 +265,11 @@ class urlss(APIView):
             url = parameter[url]
             if url =='api':
                 a = akmoxing().gets(parameter)
-            elif url =='gonghangrule':
-                a = gonghangrule().get(parameter)
+            # elif url =='gonghangrule':
+            #     a = gonghangrule().get(parameter)
             else:
-                ret = {"code": "方法错误"}
-            return HttpResponse(ret)
+                a = yunwei(APIView).get(request)
+            return HttpResponse(a)
         except:
             ret = {"code": 4000}
             return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")

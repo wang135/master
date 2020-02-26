@@ -265,8 +265,8 @@ class urlss(APIView):
             url = parameter[url]
             if url =='api':
                 a = akmoxing().gets(parameter)
-            # elif url =='gonghangrule':
-            #     a = gonghangrule().get(parameter)
+            elif url =='gonghangrule':
+                a = gonghangrule().get(parameter)
             else:
                 a = yunwei(APIView).get(request)
             return HttpResponse(a)

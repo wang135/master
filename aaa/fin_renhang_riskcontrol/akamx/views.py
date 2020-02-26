@@ -257,6 +257,7 @@ class urlss(APIView):
 
         # json转字典
         parameter = json.loads(parameter_json)
+        # print('wwwwwwwwwwwww',parameter)
 
         try:
             url = 'url'

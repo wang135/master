@@ -9,24 +9,27 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settingss and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-##############
+#print('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-## 旧的目录
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-###修改后的目录
+#旧的目录
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0,os.path.join(BASE_DIR, 'extra_apps'))
+##修改后的路径
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-#print("pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp")
+#
 # Quick-start development settingss - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'qcb%nds7i63n-=e3%@4+939m89m@_912xaj6f03%fv^ll#j!^w'
+# SECRET_KEY = 'yr3o)zzq0%^gi31gxb^x1qz@htqh@y*djyz_l4+y9d%rm%r%ic'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -41,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ghrule',
-     'akamx',
+    'akamx',
     'rest_framework',
 ]
 
@@ -86,15 +89,18 @@ WSGI_APPLICATION = 'Gonghangguize.wsgi.application'
 #     }
 # }
 
-#
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'riskcontrol_acard',
-        'USER':'riskcontrol_app',
-        'PASSWORD':'htEu3erj#',
-        'HOST':"rm-2zen1r8lhtu0f6cv4.mysql.rds.aliyuncs.com",
-        'PORT':3306,
+        'USER': 'riskcontrol_app',
+        'PASSWORD': 'htEu3erj#',
+        'HOST': "test.mysql.proxysql.rw.huashenghaoche.net",
+        'PORT': 3306,
         'init_command': 'SET default_storage_engine=MyISAM',
 
     }
@@ -139,17 +145,8 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-
-# import datetime
-# today = datetime.datetime.today()
-# aa = today.strftime("%Y-%m-%d")
-
-#filename =aa+'.log'
-#print('BASE_DIRBASE_DIRBASE_DIR',BASE_DIR)
-
 # 日志日志
-# 日志日志
-filename ='riwsehngchang'
+filename ='riw'
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
@@ -183,7 +180,7 @@ LOGGING = {
             'class': 'logging.handlers.TimedRotatingFileHandler',
             # 'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': os.path.join(LOG_DIR, filename),
-            'when': 'H',
+            'when': 'M',
             'interval':1,
             # 'maxBytes': 1024*1024*1024,
             # 'backupCount': 5,
@@ -215,15 +212,18 @@ hsa_method ="credit.credit_single_query"
 hsa_version= "v1.0.0"
 
 
+###设置参数
+##测试账号
+hsa_account_code_cs= "hshc_zhangxl",
+hsa_account_key_cs="fff68e025c8743e14bbe398eaaee8ae6",
 
 
-###正式账号
-
-hsa_account_code_zs= "hshc_ywfk",
-hsa_account_key_zs="d364129b4fdb134c2c78919fe4290978",
 
 
+url_cs = "http://test-credit.huashenghaoche.com/hshccredit/gateway/request"
 
-url_zs = 'http://credit.huashenghaoche.com:80/hshccredit/gateway/request'
+
+
+
 
 

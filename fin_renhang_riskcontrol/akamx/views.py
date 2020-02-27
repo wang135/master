@@ -132,8 +132,8 @@ class akmoxing:
                     names = parameter[full_name]
                     ids = parameter[id_no]
                     cntent = names + str(ids) + '6000'
-                    mail = SendMail(content=cntent)
-                    mail.send_mail()
+                    # mail = SendMail(content=cntent)
+                    # mail.send_mail()
                     dd = time.clock()
                     logger.info("6000结束时间{dd}".format(dd=dd))
                     return HttpResponse(json.dumps(ret, ensure_ascii=False),content_type="application/json,charset=utf-8")
@@ -215,8 +215,8 @@ class akmoxing:
                 names = parameter[full_name]
                 ids = parameter[id_no]
                 cntent = names + str(ids)+'4000'
-                mail = SendMail(content=cntent)
-                mail.send_mail()
+                # mail = SendMail(content=cntent)
+                # mail.send_mail()
                 aa = time.clock()
                 logger.info("4000结束时间{aa}".format(aa=aa))
                 return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
@@ -224,8 +224,8 @@ class akmoxing:
             names = parameter[full_name]
             ids = parameter[id_no]
             cntent = names + str(ids) + '5000'
-            mail = SendMail(content=cntent)
-            mail.send_mail()
+            # mail = SendMail(content=cntent)
+            # mail.send_mail()
             ret = {"code": 5000}
             bb = time.clock()
             logger.info("5000结束时间{bb}".format(bb=bb))

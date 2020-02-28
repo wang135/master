@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Gonghangguize.settingss")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Gonghangguize.settings")
 
 #新修改的
 # profile = os.environ.get('TYPEIDEA_PROFILE',)

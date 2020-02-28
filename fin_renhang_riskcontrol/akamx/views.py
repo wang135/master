@@ -18,7 +18,7 @@ from  rest_framework import exceptions
 
 from rest_framework.permissions import BasePermission
 
-
+from akamx.statusss import  Status
 import io
 from rest_framework.parsers import JSONParser
 ### 新增加了
@@ -63,11 +63,14 @@ class akmoxing:
         id_type = 'id_type'
         money = 'money'
         channel = 'channel'
-        ret = {"code":'1000'}
+        capital_code = 'capital_code'
+        level_price = 'level_price'
+        ret = {"code":'-999'}
 
         # 如果定义的get_phone和get_password都在请求的json中忘下走
         try:
-            if full_name in parameter and id_no in parameter and cellphone in parameter and id_type in parameter and channel in parameter:
+            if full_name in parameter and id_no in parameter and cellphone in parameter and id_type in parameter \
+                    and channel in parameter and capital_code in parameter and level_price in parameter:
                 ##print('sss',parameter)
                 # 取出其request.json中的phone和password
                 names = parameter[full_name]
@@ -77,6 +80,8 @@ class akmoxing:
                 id_type = parameter[id_type]
                 id_type = id_type
                 channel = parameter[channel]
+                capital_code = parameter['capital_code']
+                level_price = parameter['level_price']
                 b = time.clock()
                 logger.info("requests时间{b}".format(b=b))
 
@@ -132,8 +137,8 @@ class akmoxing:
                     names = parameter[full_name]
                     ids = parameter[id_no]
                     cntent = names + str(ids) + '6000'
-                    mail = SendMail(content=cntent)
-                    mail.send_mail()
+                    # mail = SendMail(content=cntent)
+                    # mail.send_mail()
                     dd = time.clock()
                     logger.info("6000结束时间{dd}".format(dd=dd))
                     return HttpResponse(json.dumps(ret, ensure_ascii=False),content_type="application/json,charset=utf-8")
@@ -183,15 +188,10 @@ class akmoxing:
                     # # #print(form_obj.clean_data)
                     #     #print('errorserrorserrorserrorserrorserrors',jsonss_ser.errors)
                     #     return jsonss_ser.errors
-                    if ret['score']['score_mx'] > 715 and ret['dict_credit_group'] <100  \
-                        and ret['score']['td_score'] < 80 and ret['score']['br_score'] < 80:
-                        status = 1000
-                    elif ret['score']['score_mx'] < 405 or ret['dict_credit_group'] == 100  \
-                        or (ret['score']['td_score'] > 80 and ret['score']['br_score']) > 80:
-                        status = 3000
-                    else:
-                        status = 2000
-                    statuss = {'codes':status}
+
+                    statuss = Status(ret['score']['score_mx'],ret['score']['br_score'],ret['score']['td_score'],ret['dict_credit_group'],capital_code).status()
+                    # statuss = {'codes':status}
+                    statuss_code = {'codes':statuss}
                     ret['code'] = statuss
                     jsonss_ser = jsonssModelSerializer(data=ret)
                     # print(jsonss_ser.is_valid())
@@ -209,14 +209,14 @@ class akmoxing:
                     logger.info("结束时间{l}".format(l=l))
                     delates= l-a
                     logger.info("总共用时间是{delates}".format(delates=delates))
-                    return HttpResponse(json.dumps(statuss , ensure_ascii=False), content_type="application/json,charset=utf-8")
+                    return HttpResponse(json.dumps(statuss_code , ensure_ascii=False), content_type="application/json,charset=utf-8")
             else:
                 ret = {"code": 4000}
                 names = parameter[full_name]
                 ids = parameter[id_no]
                 cntent = names + str(ids)+'4000'
-                mail = SendMail(content=cntent)
-                mail.send_mail()
+                # mail = SendMail(content=cntent)
+                # mail.send_mail()
                 aa = time.clock()
                 logger.info("4000结束时间{aa}".format(aa=aa))
                 return HttpResponse(json.dumps(ret, ensure_ascii=False), content_type="application/json,charset=utf-8")
@@ -224,8 +224,8 @@ class akmoxing:
             names = parameter[full_name]
             ids = parameter[id_no]
             cntent = names + str(ids) + '5000'
-            mail = SendMail(content=cntent)
-            mail.send_mail()
+            # mail = SendMail(content=cntent)
+            # mail.send_mail()
             ret = {"code": 5000}
             bb = time.clock()
             logger.info("5000结束时间{bb}".format(bb=bb))

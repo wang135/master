@@ -1,12 +1,63 @@
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:81 INFO - requests时间4.7128442
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:85 INFO - 获取客户的时间4.7141825
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:93 INFO - 保存客户的时间4.7673382
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:100 INFO - 获取人行的数据4.7676868
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.831054
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.6179550999999996
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:107 INFO - 获取三方数据6.4259739
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:170 INFO - 输出最终数据7.4406987
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:202 INFO - 保存数据7.4621087
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:209 INFO - 结束时间7.4624317
-26/Feb/2020 18:39 [Thread-1: 14424]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:211 INFO - 总共用时间是2.7495908999999994
-26/Feb/2020 18:39 [Thread-1: 14424]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 15
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间8.0039098
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间8.0053535
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间8.0517774
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据8.0520963
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.8697663000000002
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.5782322000000004
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据9.6940471
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:175 INFO - 输出最终数据10.7713756
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:201 INFO - 保存数据10.7938671
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:208 INFO - 结束时间10.7941906
+28/Feb/2020 11:10 [Thread-1: 18220]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:210 INFO - 总共用时间是2.7902842000000003
+28/Feb/2020 11:10 [Thread-1: 18220]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 4
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间4.5424947
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间4.5428915
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间4.5892683
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据4.5897045
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.8148825000000004
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.5665363999999995
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据6.1869628
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:175 INFO - 输出最终数据7.2587088
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:201 INFO - 保存数据7.2809856
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:208 INFO - 结束时间7.2812233
+28/Feb/2020 11:11 [Thread-1: 18272]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:210 INFO - 总共用时间是2.7387321999999994
+28/Feb/2020 11:11 [Thread-1: 18272]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 4
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间6.5117039
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间6.5123557
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间6.5690305
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据6.5693109
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.9099865999999999
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.5632956
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据8.2598683
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:175 INFO - 输出最终数据9.3548175
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:202 INFO - 保存数据9.376915
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:209 INFO - 结束时间9.3771762
+28/Feb/2020 11:12 [Thread-1: 17968]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:211 INFO - 总共用时间是2.8654792999999996
+28/Feb/2020 11:12 [Thread-1: 17968]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 15
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间165.8156967
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间165.8161439
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间165.8766271
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据165.8769609
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.1331546999999773
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.10812000000001376
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据166.144823
+28/Feb/2020 11:15 [Thread-2: 3352]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:143 INFO - 6000结束时间166.168996
+28/Feb/2020 11:15 [Thread-2: 3352]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 14
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间6.4760845
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间6.4764901
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间6.5339137
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据6.5342043
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.13385340000000046
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.11466200000000004
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据6.8101666
+28/Feb/2020 11:16 [Thread-1: 9264]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:143 INFO - 6000结束时间6.8287048
+28/Feb/2020 11:16 [Thread-1: 9264]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 14
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:86 INFO - requests时间8.0712776
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:90 INFO - 获取客户的时间8.0717218
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:98 INFO - 保存客户的时间8.1274802
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:105 INFO - 获取人行的数据8.1278114
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:148 INFO - 百融数据结束0.14038580000000067
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\bairong.py:moxing_tz:155 INFO - XGBOOST0.10250459999999961
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:112 INFO - 获取三方数据8.3969348
+28/Feb/2020 11:16 [Thread-2: 15324]C:\Users\Administrator\PycharmProjects\riskcontrol\aaa\fin_renhang_riskcontrol\akamx\views.py:gets:143 INFO - 6000结束时间8.4156803
+28/Feb/2020 11:16 [Thread-2: 15324]C:\ProgramData\Anaconda3\lib\site-packages\django\core\servers\basehttp.py:log_message:124 INFO - "POST / HTTP/1.1" 200 14

@@ -181,7 +181,7 @@ LOGGING = {
             # 'class': 'logging.handlers.TimedRotatingFileHandler',
             'filename': os.path.join(LOG_DIR, filename),
             'when': 'M',
-            'interval':1,
+            'interval':1440,
             # 'maxBytes': 1024*1024*1024,
             # 'backupCount': 5,
             'formatter': 'standard',

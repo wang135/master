@@ -9,7 +9,7 @@ class Status:
         self.capital_code =capital_code
     def status(self):
         status = ''
-        if self.capital_code== '55':
+        if self.capital_code== 'MSFL_ONLINE':
             if self.lr_score> 500 and self.dict_credit_group < 100 \
                     and self.td_score < 80 and self.br_score < 80:
                 status = 1000
